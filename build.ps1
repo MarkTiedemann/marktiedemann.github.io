@@ -1,4 +1,5 @@
 $ErrorActionPreference = 'Stop'
+$Env:Path += ';node_modules/.bin'
 
 # Build index.js
 
@@ -17,7 +18,7 @@ Write-Host -Object "index.css $($stopwatch.ElapsedMilliseconds)ms"
 
 $stopwatch = [System.Diagnostics.Stopwatch]::StartNew()
 prettier.cmd --config .prettierrc --loglevel silent --write index.md
-$main = markdown.cmd index.md
+$main = md2html.cmd index.md
 Write-Host -Object "index.md $($stopwatch.ElapsedMilliseconds)ms"
 
 # Build index.html
