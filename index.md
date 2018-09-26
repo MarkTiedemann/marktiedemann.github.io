@@ -1,1 +1,1 @@
-**_This site is currently under construction_**. In the meanwhile, you can find some of my code on [GitHub](https://github.com/MarkTiedemann), or write me an [email](mailto:www.marktiedemann@gmail.com).
+**_This site is currently under construction_**. In the meantime, you can find some of my code on [GitHub](https://github.com/MarkTiedemann), or write me an [email](mailto:www.marktiedemann@gmail.com).
