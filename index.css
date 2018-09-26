@@ -1,0 +1,94 @@
+/* Global styles */
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica,
+    Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+  margin: 30px 15px;
+}
+
+header {
+  text-align: center;
+}
+
+h1 {
+  font-weight: 100;
+  margin-bottom: 10px;
+}
+
+h2 {
+  font-weight: 400;
+  margin-top: 5px;
+}
+
+a {
+  text-decoration-color: #ff5e6e;
+}
+
+main {
+  margin: 0 auto;
+  max-width: 512px;
+  padding-left: 5px;
+}
+
+@media (min-width: 512px) {
+  main {
+    padding-left: 25px; /* Temporary work-around to make text look centered despite work-break */
+  }
+}
+
+/* Mode toggle */
+
+.dark {
+  color: #fff;
+  background-color: #20202a;
+}
+
+.light {
+  color: #20202a;
+  background-color: #fff;
+}
+
+#moon {
+  display: none;
+  width: 30px;
+  height: 30px;
+}
+
+#sun {
+  width: 30px;
+  height: 30px;
+}
+
+#mode_toggle {
+  position: fixed;
+  top: 15px;
+  right: 15px;
+  border: none;
+  outline: none;
+}
+
+.mode_toggle::-moz-focus-inner {
+  border: 0; /* Remove dotted outline in Firefox */
+}
+
+/* Accentuated text */
+
+.accent {
+  color: #ff5e6e;
+}
+
+h2 span.light.accent {
+  font-weight: 600; /* Make red text easier to read on white background */
+}
+
+/* Avatar image */
+
+.avatar {
+  width: 120px;
+  height: 120px;
+  margin: 0 auto;
+  display: block;
+  border-radius: 50%; /* Show image in circle */
+}

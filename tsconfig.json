@@ -1,0 +1,11 @@
+{
+  "include": ["index.js"],
+  "compilerOptions": {
+    "lib": ["es5", "dom"],
+    "skipDefaultLibCheck": true,
+    "allowJs": true,
+    "noEmit": true,
+    "noUnusedLocals": true,
+    "noUnusedParameters": true
+  }
+}

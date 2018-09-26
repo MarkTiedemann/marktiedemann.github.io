@@ -1,3 +1,1 @@
-# marksweb.site
-
-**Personal website made with vanilla JS.** :heart:
+[**My website. 📄**](https://marksweb.site)
