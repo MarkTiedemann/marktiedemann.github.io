@@ -2,7 +2,7 @@
 
 If you are looking for my code, you can find all of the open-source bits and bytes on [GitHub](https://github.com/MarkTiedemann).
 
-#### # Looking for my vita?
+#### # Looking for my CV?
 
 Coming soon... But here's a short preview: I recently worked on the agency software-as-a-service [HQ](https://hellohq.io) and its reimagined companion [Q.](https://meetq.ai) at [HQLabs](https://hqlabs.com/).
 

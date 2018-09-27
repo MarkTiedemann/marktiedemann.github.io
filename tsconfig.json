@@ -1,11 +1,12 @@
 {
-  "include": ["index.js"],
+  "include": ["*.ts"],
   "compilerOptions": {
     "lib": ["es5", "es2017.string", "dom"],
+    "target": "es5",
     "skipDefaultLibCheck": true,
-    "allowJs": true,
-    "noEmit": true,
+    "strict": true,
     "noUnusedLocals": true,
-    "noUnusedParameters": true
+    "noUnusedParameters": true,
+    "removeComments": true
   }
 }
