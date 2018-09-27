@@ -40,6 +40,7 @@ footer {
   margin: 30px auto;
   max-width: 512px;
   padding-left: 5px;
+  color: #ff5e6e;
 }
 
 /* Mode toggle */
@@ -88,28 +89,18 @@ footer {
   border-radius: 50%; /* Show image in circle */
 }
 
-/* Colors */
+/* Commit log */
 
-.white {
-  color: #fff;
+#commit_hash {
+  color: #99efd6;
+  word-wrap: break-word;
+  word-break: break-all;
 }
 
-.red {
-  color: #ff5e6e;
-}
-
-.green {
-  color: #26dea8;
-}
-
-.light-green {
+#commit_author {
   color: #99efd6;
 }
 
-.blue {
-  color: #44bdff;
-}
-
-.grey {
-  color: #c4c2c6;
+#commit_date {
+  color: #99efd6;
 }

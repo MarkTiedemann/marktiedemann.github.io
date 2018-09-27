@@ -1,39 +1,37 @@
 $ErrorActionPreference = 'Stop'
 $Env:Path += ';node_modules/.bin'
 
-# Build index.md
+# Format *.{css,ts,md}
 
 $stopwatch = [System.Diagnostics.Stopwatch]::StartNew()
-prettier.cmd --config .prettierrc --loglevel silent --write index.md
-$main = md2html.cmd index.md
-Write-Host -Object "index.md $($stopwatch.ElapsedMilliseconds)ms"
+prettier.cmd --config .prettierrc --loglevel silent --write '*.{css,ts,md}'
+Write-Host -Object "format *.{css,ts,md} $($stopwatch.ElapsedMilliseconds)ms"
 
 # Build index.html
 
 $stopwatch = [System.Diagnostics.Stopwatch]::StartNew()
 $indexHtml = Get-Content -Path index.html -Raw
-$openTag = '<main>'
-$closeTag = '</main>'
-$openIndex = $indexHtml.IndexOf($openTag)
-$preData = $indexHtml.Substring(0, $openIndex)
-$closeIndex = $indexHtml.IndexOf($closeTag, $openIndex)
-$postData = $indexHtml.Substring($closeIndex)
-$indexHtml = $preData + $openTag + $main + $postData
+
+function Inline($openTag, $content, $closeTag) {
+  $openIndex = $indexHtml.IndexOf($openTag)
+  $preData = $indexHtml.Substring(0, $openIndex)
+  $closeIndex = $indexHtml.IndexOf($closeTag, $openIndex)
+  $postData = $indexHtml.Substring($closeIndex)
+  $preData + $openTag + $content + $postData
+}
+
+$main = md2html.cmd index.md
+$prevCommit = (git.exe log -1 --pretty=format:"%H~%cn~%ce~%cd") -split '~'
+
+$indexHtml = Inline '<main>' $main '</main>'
+$indexHtml = Inline '<span id="commit_hash">' $prevCommit[0] '</span>'
+$indexHtml = Inline '<span id="commit_author">' $prevCommit[1] '</span>'
+$indexHtml = Inline '<span id="commit_email">' ('&lt;' + $prevCommit[2] + '&gt;') '</span>'
+$indexHtml = Inline '<span id="commit_date">' $prevCommit[3] '</span>'
+
 Set-Content -Path index.html -Value $indexHtml -NoNewline
 js-beautify.cmd --config .jsbeautifyrc --type html --quiet --replace index.html
-Write-Host -Object "index.html $($stopwatch.ElapsedMilliseconds)ms"
-
-# Build index.css
-
-$stopwatch = [System.Diagnostics.Stopwatch]::StartNew()
-prettier.cmd --config .prettierrc --loglevel silent --write index.css
-Write-Host -Object "index.css $($stopwatch.ElapsedMilliseconds)ms"
-
-# Format *.ts
-
-$stopwatch = [System.Diagnostics.Stopwatch]::StartNew()
-prettier.cmd --config .prettierrc --loglevel silent --write *.ts
-Write-Host -Object "format *.ts $($stopwatch.ElapsedMilliseconds)ms"
+Write-Host -Object "build index.html $($stopwatch.ElapsedMilliseconds)ms"
 
 # Build *.ts
 

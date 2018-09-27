@@ -3,14 +3,15 @@ let commitAuthor = document.querySelector('#commit_author') as HTMLSpanElement
 let commitEmail = document.querySelector('#commit_email') as HTMLSpanElement
 let commitDate = document.querySelector('#commit_date') as HTMLSpanElement
 
-interface Commit {
-  sha: string
-  author: {
-    login: string
-  }
-  commit: {
-    committer: {
-      date: string
+interface ApiResponse {
+  0: {
+    sha: string
+    commit: {
+      author: {
+        name: string
+        email: string
+        date: string
+      }
     }
   }
 }
@@ -22,14 +23,13 @@ function initCommitLog(): void {
   if ('fetch' in window) {
     fetch(latestCommitUrl)
       .then(res => res.json())
-      .then(commits => {
-        let commit: Commit = commits.shift()
-        commitHash.textContent = commit.sha
-        commitAuthor.textContent = commit.author.login
-        if (commit.author.login !== 'MarkTiedemann') {
-          commitEmail.textContent = '<unknown_email>'
-        }
-        commitDate.textContent = formatGitDate(new Date(commit.commit.committer.date))
+      .then((res: ApiResponse) => {
+        let item = res[0]
+        let author = item.commit.author
+        commitHash.textContent = item.sha
+        commitAuthor.textContent = author.name
+        commitEmail.textContent = '<' + author.email + '>'
+        commitDate.textContent = formatGitDate(new Date(author.date))
       })
   }
 }
