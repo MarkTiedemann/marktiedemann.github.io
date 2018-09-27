@@ -1,6 +1,6 @@
 {
   "indent_size": "1",
   "indent_char": "\t",
-  "max_preserve_newlines": "-1",
-  "preserve_newlines": false
+  "max_preserve_newlines": "1",
+  "preserve_newlines": true
 }

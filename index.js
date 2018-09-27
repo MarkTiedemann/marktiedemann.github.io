@@ -1,14 +1,14 @@
 // @ts-check
-var body = document.body
+let body = document.body
+
+// Mode toggle
 
 /** @type { HTMLButtonElement } */
-var modeToggle = document.querySelector('#mode_toggle')
+let modeToggle = document.querySelector('#mode_toggle')
 /** @type { SVGSVGElement } */
-var moon = document.querySelector('#moon')
+let moon = document.querySelector('#moon')
 /** @type { SVGSVGElement } */
-var sun = document.querySelector('#sun')
-
-var anchors = document.querySelectorAll('a')
+let sun = document.querySelector('#sun')
 
 switch (getMode()) {
   case null:
@@ -27,10 +27,8 @@ modeToggle.addEventListener('click', function() {
 })
 
 function toggleMode(mode) {
-  var newMode = mode
-  var oldMode = oppositeMode(newMode)
-
-  // Toggle controls
+  let newMode = mode
+  let oldMode = oppositeMode(newMode)
 
   modeToggle.classList.add(newMode)
   modeToggle.classList.remove(oldMode)
@@ -39,20 +37,11 @@ function toggleMode(mode) {
   moon.style.display = newMode === 'dark' ? 'none' : 'inline'
   sun.style.display = newMode === 'dark' ? 'inline' : 'none'
 
-  // Toggle elements
-
   body.classList.add(newMode)
   body.classList.remove(oldMode)
 
-  anchors.forEach(function(a) {
-    a.classList.add(newMode)
-    a.classList.remove(oldMode)
-  })
-
   setMode(newMode)
 }
-
-// Helper functions
 
 function getMode() {
   return localStorage.getItem('mode')
@@ -64,4 +53,47 @@ function setMode(mode) {
 
 function oppositeMode(mode) {
   return mode === 'dark' ? 'light' : 'dark'
+}
+
+// Commit log
+
+/** @type { HTMLSpanElement } */
+let commitHash = document.querySelector('#commit_hash')
+/** @type { HTMLSpanElement } */
+let commitAuthor = document.querySelector('#commit_author')
+/** @type { HTMLSpanElement } */
+let commitEmail = document.querySelector('#commit_email')
+/** @type { HTMLSpanElement } */
+let commitDate = document.querySelector('#commit_date')
+
+let latestCommitUrl =
+  'https://api.github.com/repos/marktiedemann/marktiedemann.github.io/commits?page=1&per_page=1'
+
+fetch(latestCommitUrl)
+  .then(res => res.json())
+  .then(commits => renderCommit(commits.shift()))
+
+function renderCommit(commit) {
+  commitHash.textContent = commit.sha
+  commitAuthor.textContent = commit.author.login
+  if (commit.author.login !== 'MarkTiedemann') {
+    commitEmail.textContent = '<unknown>'
+  }
+  commitDate.textContent = formatGitDate(commit.commit.committer.date)
+}
+
+function formatGitDate(dateString) {
+  let date = new Date(dateString)
+  let formatter = new Intl.DateTimeFormat('en-US', {
+    weekday: 'short',
+    month: 'short',
+    day: 'numeric',
+    hour: '2-digit',
+    minute: '2-digit',
+    second: '2-digit',
+    hour12: false,
+    year: 'numeric',
+    timeZoneName: 'short'
+  })
+  return formatter.format(date)
 }

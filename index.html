@@ -10,7 +10,7 @@
 
 <body class="dark">
 	<header>
-		<img class="avatar" alt="Mark" title="Mark" src="index.jpg">
+		<img id="avatar" alt="Mark" title="Mark" src="index.jpg">
 		<h1>Hi, I'm Mark.</h1>
 		<button id="mode_toggle" title="Toggle dark mode">
 			<svg id="moon" viewbox="0 0 512 512">
@@ -21,9 +21,27 @@
 			</svg>
 		</button>
 	</header>
+	<div id="under_construction" class="red">
+		This site is currently under construction.
+		<span class="white"><i> Don't expect much.</i></span>
+	</div>
 	<main>
-		<p><strong><em>This site is currently under construction</em></strong>. In the meantime, you may send me an <a href="mailto:www.marktiedemann@gmail.com">email</a>, or check out some of my code on <a href="https://github.com/MarkTiedemann">GitHub</a>.</p>
+		<p><strong>Welcome to my <em>web.site</em>!</strong></p>
+		<p>If you are looking for my code, you can find all of the open-source bits and bytes on <a href="https://github.com/MarkTiedemann">GitHub</a>.</p>
+		<h4># Looking for my vita? a.k.a. <em>&quot;Hello, recruiters!&quot;</em></h4>
+		<p>Coming soon... But here&#39;s a short preview: I recently worked on the agency software-as-a-service <a href="https://hellohq.io">HQ</a> and its reimagined companion <a href="https://meetq.ai">Q.</a> at <a href="https://hqlabs.com/">HQLabs</a>.</p>
+		<p>I&#39;m pretty comfortable in both frontend and backend, and I dabble in (dev) ops from time to time. I&#39;m a sucker for clean and maintainable code (after all, I prefer to code for fun rather than profit...)</p>
+		<h4># Any questions? Wanna say hello?</h4>
+		<p>I am a bit shy, but you can send me an <a href="mailto:www.marktiedemann@gmail.com">email</a>, or just DM me on <a href="https://twitter.com/MarkTiedemannDE">Twitter</a>.</p>
+		<h4># Found a typo or, <em>worse</em>, a bug?</h4>
+		<p>Please let me know! The <a href="https://github.com/marktiedemann/marktiedemann.github.io">source</a> of this page is available on GitHub, too. Issues, feedback, and PRs are welcome, of course!</p>
 	</main>
+	<footer>
+		commit <span id="commit_hash" class="light-green" style="word-wrap: break-word; word-break: break-all;">a6f000d144f639925827f3fa4717864e48fc84f8</span>
+		<span id="commit_branch">(master)</span><br>
+		Author: <span id="commit_author" class="light-green">MarkTiedemann</span> <span id="commit_email">&lt;www.marktiedemann@gmail.com&gt;</span></span><br>
+		Date: <span id="commit_date" class="light-green">Wed, 22 Feb 2017 23:12:50 +0100</span>
+	</footer>
 	<script src="index.js" type="application/javascript"></script>
 </body>
 

@@ -4,7 +4,7 @@ body {
   font-family: 'Segoe UI', Roboto, Arial;
   -webkit-font-smoothing: antialiased;
   text-rendering: optimizeLegibility;
-  margin: 30px 15px;
+  margin: 35px 15px;
 }
 
 header {
@@ -22,19 +22,24 @@ h2 {
 }
 
 a {
-  text-decoration-color: #ff5e6e;
+  color: #44bdff;
+  text-decoration: none;
 }
 
-main {
-  margin: 0 auto;
+main,
+footer {
+  margin: 30px auto;
   max-width: 512px;
   padding-left: 5px;
 }
 
-@media (min-width: 512px) {
-  main {
-    padding-left: 25px; /* Temporary work-around to make text look centered despite work-break */
-  }
+/* Under construction notice */
+
+#under_construction {
+  font-weight: bold;
+  margin: 30px auto;
+  max-width: 512px;
+  padding-left: 5px;
 }
 
 /* Mode toggle */
@@ -64,6 +69,7 @@ main {
   position: fixed;
   top: 15px;
   right: 15px;
+  cursor: pointer;
   border: none;
   outline: none;
 }
@@ -72,18 +78,38 @@ main {
   border: 0; /* Remove dotted outline in Firefox */
 }
 
-/* Accentuated text */
-
-.accent {
-  color: #ff5e6e;
-}
-
 /* Avatar image */
 
-.avatar {
+#avatar {
   width: 120px;
   height: 120px;
   margin: 0 auto;
   display: block;
   border-radius: 50%; /* Show image in circle */
+}
+
+/* Colors */
+
+.white {
+  color: #fff;
+}
+
+.red {
+  color: #ff5e6e;
+}
+
+.green {
+  color: #26dea8;
+}
+
+.light-green {
+  color: #99efd6;
+}
+
+.blue {
+  color: #44bdff;
+}
+
+.grey {
+  color: #c4c2c6;
 }
