@@ -66,7 +66,7 @@ footer {
 }
 
 #mode_toggle {
-  position: fixed;
+  position: absolute;
   top: 15px;
   right: 15px;
   cursor: pointer;
@@ -74,7 +74,7 @@ footer {
   outline: none;
 }
 
-.mode_toggle::-moz-focus-inner {
+#mode_toggle::-moz-focus-inner {
   border: 0; /* Remove dotted outline in Firefox */
 }
 
