@@ -16,22 +16,18 @@ interface ApiResponse {
   }
 }
 
-initCommitLog()
-
-function initCommitLog(): void {
-  let latestCommitUrl = 'https://api.github.com/repos/marktiedemann/marktiedemann.github.io/commits?page=1&per_page=1'
-  if ('fetch' in window) {
-    fetch(latestCommitUrl)
-      .then(res => res.json())
-      .then((res: ApiResponse) => {
-        let item = res[0]
-        let author = item.commit.author
-        commitHash.textContent = item.sha
-        commitAuthor.textContent = author.name
-        commitEmail.textContent = '<' + author.email + '>'
-        commitDate.textContent = formatGitDate(new Date(author.date))
-      })
-  }
+let latestCommitUrl = 'https://api.github.com/repos/marktiedemann/marktiedemann.github.io/commits?page=1&per_page=1'
+if ('fetch' in window) {
+  fetch(latestCommitUrl)
+    .then(res => res.json())
+    .then((res: ApiResponse) => {
+      let item = res[0]
+      let author = item.commit.author
+      commitHash.textContent = item.sha
+      commitAuthor.textContent = author.name
+      commitEmail.textContent = '<' + author.email + '>'
+      commitDate.textContent = formatGitDate(new Date(author.date))
+    })
 }
 
 /**

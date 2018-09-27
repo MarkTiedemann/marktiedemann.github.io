@@ -5,24 +5,10 @@ let sun = document.querySelector('#sun') as SVGSVGElement
 
 type Mode = 'dark' | 'light'
 
-initModeToggle()
-
-function initModeToggle(): void {
-  switch (getMode()) {
-    case null:
-      toggleMode('dark')
-      break
-    case 'dark':
-      toggleMode('dark')
-      break
-    case 'light':
-      toggleMode('light')
-      break
-  }
-  modeToggle.addEventListener('click', () => {
-    toggleMode(oppositeMode(getMode()))
-  })
-}
+toggleMode(getMode())
+modeToggle.addEventListener('click', () => {
+  toggleMode(oppositeMode(getMode()))
+})
 
 function toggleMode(mode: Mode): void {
   let newMode = mode
@@ -42,13 +28,7 @@ function toggleMode(mode: Mode): void {
 }
 
 function getMode(): Mode {
-  let item = localStorage.getItem('mode')
-  switch (item) {
-    case 'light':
-      return 'light'
-    default:
-      return 'dark'
-  }
+  return localStorage.getItem('mode') === 'light' ? 'light' : 'dark'
 }
 
 function setMode(mode: Mode): void {
