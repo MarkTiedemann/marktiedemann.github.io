@@ -44,6 +44,6 @@ Write-Host -Object "build *.ts $($stopwatch.ElapsedMilliseconds)ms"
 # Minify *.js
 
 $stopwatch = [System.Diagnostics.Stopwatch]::StartNew()
-terser.cmd --compress --mangle --enclose --ecma 6 --output commit_log.min.js -- commit_log.js
-terser.cmd --compress --mangle --enclose --ecma 6 --output mode_toggle.min.js -- mode_toggle.js
+terser.cmd --compress --mangle --enclose --ecma 6 `
+  --source-map "url='index.min.js.map'" --output index.min.js -- commit_log.js mode_toggle.js
 Write-Host -Object "minify *.js $($stopwatch.ElapsedMilliseconds)ms"
