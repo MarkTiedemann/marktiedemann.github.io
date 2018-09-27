@@ -1,8 +1,7 @@
 /* Global styles */
 
 body {
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica,
-    Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';
+  font-family: 'Segoe UI', Roboto, Arial;
   -webkit-font-smoothing: antialiased;
   text-rendering: optimizeLegibility;
   margin: 30px 15px;
@@ -77,10 +76,6 @@ main {
 
 .accent {
   color: #ff5e6e;
-}
-
-h2 span.light.accent {
-  font-weight: 600; /* Make red text easier to read on white background */
 }
 
 /* Avatar image */

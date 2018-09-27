@@ -9,7 +9,6 @@ var moon = document.querySelector('#moon')
 var sun = document.querySelector('#sun')
 
 var anchors = document.querySelectorAll('a')
-var spans = document.querySelectorAll('span')
 
 switch (getMode()) {
   case null:
@@ -48,11 +47,6 @@ function toggleMode(mode) {
   anchors.forEach(function(a) {
     a.classList.add(newMode)
     a.classList.remove(oldMode)
-  })
-
-  spans.forEach(function(s) {
-    s.classList.add(newMode)
-    s.classList.remove(oldMode)
   })
 
   setMode(newMode)
