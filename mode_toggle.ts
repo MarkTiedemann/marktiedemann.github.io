@@ -35,6 +35,6 @@ function setMode(mode: Mode): void {
   localStorage.setItem('mode', mode)
 }
 
-function oppositeMode(mode: Mode) {
+function oppositeMode(mode: Mode): Mode {
   return mode === 'light' ? 'dark' : 'light'
 }
