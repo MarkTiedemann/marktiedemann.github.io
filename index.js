@@ -69,9 +69,11 @@ let commitDate = document.querySelector('#commit_date')
 let latestCommitUrl =
   'https://api.github.com/repos/marktiedemann/marktiedemann.github.io/commits?page=1&per_page=1'
 
-fetch(latestCommitUrl)
-  .then(res => res.json())
-  .then(commits => renderCommit(commits.shift()))
+if (location.hostname !== 'localhost') {
+  fetch(latestCommitUrl)
+    .then(res => res.json())
+    .then(commits => renderCommit(commits.shift()))
+}
 
 function renderCommit(commit) {
   commitHash.textContent = commit.sha
