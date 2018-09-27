@@ -1,0 +1,3 @@
+- Optimize .jpg
+- Add .js source maps
+- Inline previous `git log` data
