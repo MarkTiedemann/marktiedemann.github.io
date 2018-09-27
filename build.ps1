@@ -4,7 +4,7 @@ $Env:Path += ';node_modules/.bin'
 # Format *.{css,ts,md}
 
 $stopwatch = [System.Diagnostics.Stopwatch]::StartNew()
-prettier.cmd --config .prettierrc --loglevel silent --write '*.{css,ts,md}'
+prettier --config .prettierrc --loglevel silent --write '*.{css,ts,md}'
 Write-Host -Object "format *.{css,ts,md} $($stopwatch.ElapsedMilliseconds)ms"
 
 # Build index.html
@@ -30,18 +30,18 @@ $indexHtml = Inline '<span id="commit_email">' ('&lt;' + $prevCommit[2] + '&gt;'
 $indexHtml = Inline '<span id="commit_date">' $prevCommit[3] '</span>'
 
 Set-Content -Path index.html -Value $indexHtml -NoNewline
-js-beautify.cmd --config .jsbeautifyrc --type html --quiet --replace index.html
+js-beautify --config .jsbeautifyrc --type html --quiet --replace index.html
 Write-Host -Object "build index.html $($stopwatch.ElapsedMilliseconds)ms"
 
 # Build *.ts
 
 $stopwatch = [System.Diagnostics.Stopwatch]::StartNew()
-tsc.cmd --project tsconfig.json
+tsc --project tsconfig.json
 Write-Host -Object "build *.ts $($stopwatch.ElapsedMilliseconds)ms"
 
 # Minify *.js
 
 $stopwatch = [System.Diagnostics.Stopwatch]::StartNew()
-terser.cmd --compress --mangle --enclose --ecma 6 `
+terser --compress --mangle --enclose --ecma 6 `
   --source-map "url='index.min.js.map'" --output index.min.js -- commit_log.js mode_toggle.js
 Write-Host -Object "minify *.js $($stopwatch.ElapsedMilliseconds)ms"

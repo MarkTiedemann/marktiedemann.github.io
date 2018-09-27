@@ -14,6 +14,8 @@ I am a bit shy, but you can send me an [email](mailto:www.marktiedemann@gmail.co
 
 #### # Found a typo or, _worse_, a bug?
 
-Please let me know! The [source](https://github.com/marktiedemann/marktiedemann.github.io) of this page is available on GitHub, too. Issues, feedback, and PRs are welcome, of course!
+Please let me know! The [source](https://github.com/marktiedemann/marktiedemann.github.io) of this site is available on GitHub, too. Issues, feedback, and PRs are welcome!
 
 _~Mark_
+
+PS: The icons used on this site are from the open-source friendly [Font Awesome (Free)](https://fontawesome.com/free) licensed under the [CC BY 4.0 License](https://creativecommons.org/licenses/by/4.0/).
