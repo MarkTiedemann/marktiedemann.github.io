@@ -18,4 +18,4 @@ Please let me know! The [source](https://github.com/marktiedemann/marktiedemann.
 
 _~Mark_
 
-PS: The icons used on this site are from the open-source friendly [Font Awesome (Free)](https://fontawesome.com/free) licensed under the [CC BY 4.0 License](https://creativecommons.org/licenses/by/4.0/).
+PS: The icons used on this site are from the free [Font Awesome](https://fontawesome.com/free) licensed under the [CC BY 4.0 License](https://creativecommons.org/licenses/by/4.0/).
