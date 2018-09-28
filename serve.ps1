@@ -14,7 +14,7 @@ Start-Job -ScriptBlock {
   serve --listen 80 | Out-Null
 } -ArgumentList $PSScriptRoot, $port | Out-Null
 
-# Probe until server is live
+# Probe site until it's live
 $isServing = $false
 while (!$isServing) {
   try {
@@ -26,7 +26,7 @@ while (!$isServing) {
   }
 }
 
-# Open the site in the browser
+# Open site in browser
 Write-Host -Object $url
 opn $url
 
