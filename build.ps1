@@ -20,8 +20,8 @@ function Inline($openTag, $content, $closeTag) {
   $preData + $openTag + $content + $postData
 }
 
-$main = md2html.cmd index.md
-$prevCommit = (git.exe log -1 --pretty=format:"%H~%cn~%ce~%cd") -split '~'
+$main = md2html index.md
+$prevCommit = (git log -1 --pretty=format:"%H~%cn~%ce~%cd") -split '~'
 
 $indexHtml = Inline '<main>' $main '</main>'
 $indexHtml = Inline '<span id="commit_hash">' $prevCommit[0] '</span>'
