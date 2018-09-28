@@ -62,7 +62,7 @@ function renderResponse(response: Response) {
 }
 
 /**
- * Formats a JavaScript date (e.g. `2018-09-26T18:31:08.000Z`)
+ * Format a JavaScript date (e.g. `2018-09-26T18:31:08.000Z`)
  * into a Git date (e.g. `Wed Sep 26 20:31:08 2018 +0200`).
  */
 function formatGitDate(date: Date): string {
@@ -78,7 +78,7 @@ function formatGitDate(date: Date): string {
 }
 
 /**
- * Formats a JavaScript timezone offset in minutes (e.g `-120`)
+ * Format a JavaScript timezone offset in minutes (e.g `-120`)
  * into a Git timezone offset (e.g. `+0200`).
  */
 function formatGitTimezoneOffset(offsetInMinutes: number): string {

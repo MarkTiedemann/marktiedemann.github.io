@@ -24,6 +24,8 @@ I'm pretty comfortable in both front- and backend, and I dabble in (dev) ops fro
 
 I usually document and test my code appropriately, even if it takes a little longer (hint: in most cases, _it doesn't_). And if I didn't, I probably had a bluescreen or, worse, got distracted learning something new, drifting off into the depths of the internet or the command line for a few hours...
 
+Being both an imperfect perfectionist and/or a minimalist, I probably enjoy refactoring and code reviews more than the average person. Plus, I hate typos.
+
 #### # Any questions? Wanna say hello?
 
 I am a bit shy, but you can send me an [email](mailto:www.marktiedemann@gmail.com), or just DM me on [Twitter](https://twitter.com/MarkTiedemannDE).
