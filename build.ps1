@@ -20,10 +20,12 @@ function Inline($openTag, $content, $closeTag) {
   $preData + $openTag + $content + $postData
 }
 
+$css = cleancss index.css
 $main = md2html index.md
 $prevCommit = (git log -1 --pretty=format:"%H~%cn~%ce~%cd") -split '~'
 $linkedData = Get-Content -Path linked_data.json -Raw | jq -c .
 
+$indexHtml = Inline '<style>' $css '</style>'
 $indexHtml = Inline '<main>' $main '</main>'
 $indexHtml = Inline '<span id="commit_hash">' $prevCommit[0] '</span>'
 $indexHtml = Inline '<span id="commit_author">' $prevCommit[1] '</span>'
@@ -32,7 +34,8 @@ $indexHtml = Inline '<span id="commit_date">' $prevCommit[3] '</span>'
 $indexHtml = Inline '<script type="application/ld+json">' $linkedData '</script>'
 
 Set-Content -Path index.html -Value $indexHtml -NoNewline
-js-beautify --config .jsbeautifyrc --type html --unformatted script --quiet --replace index.html
+js-beautify --config .jsbeautifyrc --type html --unformatted style `
+  --unformatted script --quiet --replace index.html
 Write-Host -Object "build index.html $($stopwatch.ElapsedMilliseconds)ms"
 
 # Build *.ts
