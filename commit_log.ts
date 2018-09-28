@@ -51,7 +51,7 @@ function formatGitDate(date: Date): string {
  * into a Git timezone offset (e.g. `+0200`).
  */
 function formatGitTimezoneOffset(offsetInMinutes: number): string {
-  let offsetInHours = Math.abs(Math.round(offsetInMinutes / 60)).toString()
+  let offsetInHours = Math.abs(Math.floor(offsetInMinutes / 60)).toString()
   let offsetInHoursPadded = leftPad(offsetInHours, 2, '0')
   let offsetRemainder = (offsetInMinutes % 60).toString()
   let offsetRemainderPadded = leftPad(offsetRemainder, 2, '0')
