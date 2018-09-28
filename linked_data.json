@@ -1,0 +1,17 @@
+{
+  "@context": "http://schema.org/",
+  "@type": "Person",
+  "name": "Mark",
+  "familyName": "Tiedemann",
+  "email": "www.marktiedemann@gmail.com",
+  "gender": "Male",
+  "homeLocation": {
+    "@type": "Place",
+    "address": {
+      "@type": "PostalAddress",
+      "addressCountry": "DE",
+      "addressRegion": "Hamburg"
+    }
+  },
+  "nationality": "DE"
+}
