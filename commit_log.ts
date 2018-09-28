@@ -13,7 +13,22 @@ if (commitAuthor !== null) $commitAuthor.textContent = commitAuthor
 if (commitEmail !== null) $commitEmail.textContent = commitEmail
 if (commitDate !== null) $commitDate.textContent = commitDate
 
-interface ApiResponse {
+requestLatestCommit()
+
+function requestLatestCommit() {
+  let request = new XMLHttpRequest()
+  request.timeout = 2000
+  request.addEventListener('load', () => {
+    if (request.status === 200) {
+      renderResponse(JSON.parse(request.responseText))
+    }
+  })
+  let latestCommitUrl = 'https://api.github.com/repos/marktiedemann/marktiedemann.github.io/commits?page=1&per_page=1'
+  request.open('GET', latestCommitUrl)
+  request.send()
+}
+
+interface Response {
   0: {
     sha: string
     commit: {
@@ -26,29 +41,24 @@ interface ApiResponse {
   }
 }
 
-if ('fetch' in window) {
-  let latestCommitUrl = 'https://api.github.com/repos/marktiedemann/marktiedemann.github.io/commits?page=1&per_page=1'
-  fetch(latestCommitUrl)
-    .then(res => res.json())
-    .then((res: ApiResponse) => {
-      let item = res[0]
-      let author = item.commit.author
+function renderResponse(response: Response) {
+  let item = response[0]
+  let author = item.commit.author
 
-      commitHash = item.sha
-      commitAuthor = author.name
-      commitEmail = '<' + author.email + '>'
-      commitDate = formatGitDate(new Date(author.date))
+  commitHash = item.sha
+  commitAuthor = author.name
+  commitEmail = '<' + author.email + '>'
+  commitDate = formatGitDate(new Date(author.date))
 
-      $commitHash.textContent = commitHash
-      $commitAuthor.textContent = commitAuthor
-      $commitEmail.textContent = commitEmail
-      $commitDate.textContent = commitDate
+  $commitHash.textContent = commitHash
+  $commitAuthor.textContent = commitAuthor
+  $commitEmail.textContent = commitEmail
+  $commitDate.textContent = commitDate
 
-      localStorage.setItem('commit_hash', commitHash)
-      localStorage.setItem('commit_author', commitAuthor)
-      localStorage.setItem('commit_email', commitEmail)
-      localStorage.setItem('commit_date', commitDate)
-    })
+  localStorage.setItem('commit_hash', commitHash)
+  localStorage.setItem('commit_author', commitAuthor)
+  localStorage.setItem('commit_email', commitEmail)
+  localStorage.setItem('commit_date', commitDate)
 }
 
 /**
@@ -84,13 +94,9 @@ function formatGitTimezoneOffset(offsetInMinutes: number): string {
  * Left pad the given string with a padding string to the specified length.
  */
 function leftPad(string: string, length: number, padString: string): string {
-  if (string.padStart !== undefined) {
-    // ES2017
-    return string.padStart(length, padString)
-  } else {
-    while (string.length < length) {
-      string = padString + string
-    }
-    return string
+  // TODO(future): Replace this function with ES2017 `String.prototype.padStart()`.
+  while (string.length < length) {
+    string = padString + string
   }
+  return string
 }

@@ -1,3 +1,2 @@
 - Fix colors in light-mode
 - Update README.md
-- Fallback to xhr if fetch is not available

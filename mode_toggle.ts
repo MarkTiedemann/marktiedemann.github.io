@@ -1,4 +1,4 @@
-let body = document.body
+let $body = document.body
 let $modeToggle = document.querySelector('#mode_toggle') as HTMLButtonElement
 let $moon = document.querySelector('#moon') as SVGSVGElement
 let $sun = document.querySelector('#sun') as SVGSVGElement
@@ -21,8 +21,8 @@ function toggleMode(mode: Mode): void {
   $moon.style.display = newMode === 'dark' ? 'none' : 'inline'
   $sun.style.display = newMode === 'dark' ? 'inline' : 'none'
 
-  body.classList.add(newMode)
-  body.classList.remove(oldMode)
+  $body.classList.add(newMode)
+  $body.classList.remove(oldMode)
 
   setMode(newMode)
 }
