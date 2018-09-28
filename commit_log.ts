@@ -17,7 +17,7 @@ requestLatestCommit()
 
 function requestLatestCommit() {
   let request = new XMLHttpRequest()
-  request.timeout = 2000
+  request.timeout = 1000
   request.addEventListener('load', () => {
     if (request.status === 200) {
       renderResponse(JSON.parse(request.responseText))
@@ -83,8 +83,8 @@ function formatGitDate(date: Date): string {
  */
 function formatGitTimezoneOffset(offsetInMinutes: number): string {
   let offsetInHours = Math.abs(Math.floor(offsetInMinutes / 60)).toString()
-  let offsetInHoursPadded = leftPad(offsetInHours, 2, '0')
   let offsetRemainder = (offsetInMinutes % 60).toString()
+  let offsetInHoursPadded = leftPad(offsetInHours, 2, '0')
   let offsetRemainderPadded = leftPad(offsetRemainder, 2, '0')
   let prefix = offsetInMinutes > 0 ? '-' : '+'
   return prefix + offsetInHoursPadded + offsetRemainderPadded

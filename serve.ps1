@@ -11,7 +11,7 @@ Start-Job -ScriptBlock {
   $Env:Path += ';node_modules/.bin'
 
   Set-Location -Path $location
-  serve --listen 80 | Out-Null
+  serve --listen $port | Out-Null
 } -ArgumentList $PSScriptRoot, $port | Out-Null
 
 # Probe site until it's live
