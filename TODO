@@ -1,4 +1,3 @@
 - Fix colors in light-mode
 - Update README.md
-- Persist latest commit in localStorage
 - Fallback to xhr if fetch is not available

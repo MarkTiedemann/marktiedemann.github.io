@@ -1,7 +1,17 @@
-let commitHash = document.querySelector('#commit_hash') as HTMLSpanElement
-let commitAuthor = document.querySelector('#commit_author') as HTMLSpanElement
-let commitEmail = document.querySelector('#commit_email') as HTMLSpanElement
-let commitDate = document.querySelector('#commit_date') as HTMLSpanElement
+let $commitHash = document.querySelector('#commit_hash') as HTMLSpanElement
+let $commitAuthor = document.querySelector('#commit_author') as HTMLSpanElement
+let $commitEmail = document.querySelector('#commit_email') as HTMLSpanElement
+let $commitDate = document.querySelector('#commit_date') as HTMLSpanElement
+
+let commitHash = localStorage.getItem('commit_hash')
+let commitAuthor = localStorage.getItem('commit_author')
+let commitEmail = localStorage.getItem('commit_email')
+let commitDate = localStorage.getItem('commit_date')
+
+if (commitHash !== null) $commitHash.textContent = commitHash
+if (commitAuthor !== null) $commitAuthor.textContent = commitAuthor
+if (commitEmail !== null) $commitEmail.textContent = commitEmail
+if (commitDate !== null) $commitDate.textContent = commitDate
 
 interface ApiResponse {
   0: {
@@ -16,17 +26,28 @@ interface ApiResponse {
   }
 }
 
-let latestCommitUrl = 'https://api.github.com/repos/marktiedemann/marktiedemann.github.io/commits?page=1&per_page=1'
 if ('fetch' in window) {
+  let latestCommitUrl = 'https://api.github.com/repos/marktiedemann/marktiedemann.github.io/commits?page=1&per_page=1'
   fetch(latestCommitUrl)
     .then(res => res.json())
     .then((res: ApiResponse) => {
       let item = res[0]
       let author = item.commit.author
-      commitHash.textContent = item.sha
-      commitAuthor.textContent = author.name
-      commitEmail.textContent = '<' + author.email + '>'
-      commitDate.textContent = formatGitDate(new Date(author.date))
+
+      commitHash = item.sha
+      commitAuthor = author.name
+      commitEmail = '<' + author.email + '>'
+      commitDate = formatGitDate(new Date(author.date))
+
+      $commitHash.textContent = commitHash
+      $commitAuthor.textContent = commitAuthor
+      $commitEmail.textContent = commitEmail
+      $commitDate.textContent = commitDate
+
+      localStorage.setItem('commit_hash', commitHash)
+      localStorage.setItem('commit_author', commitAuthor)
+      localStorage.setItem('commit_email', commitEmail)
+      localStorage.setItem('commit_date', commitDate)
     })
 }
 
