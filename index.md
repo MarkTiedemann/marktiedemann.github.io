@@ -34,6 +34,8 @@ I am a bit shy, but you can send me an [email](mailto:www.marktiedemann@gmail.co
 
 Please let me know! The [source code](https://github.com/marktiedemann/marktiedemann.github.io) of this site is available on GitHub, too. Issues, feedback, and PRs are welcome!
 
+Hope you enjoyed the read. More content is coming soon.
+
 _~Mark_
 
 PS: The initial design of this site was inspired by [Sindre Sorhus'](https://github.com/sindresorhus) [website](https://sindresorhus.com/). The content and personal nature of this site are partially inspired by [Molly White's](http://www.mollywhite.net/) [manager-README](https://github.com/molly/manager-README). And the icons used on this site are by [Font Awesome](https://fontawesome.com/free), free, and [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/)-licensed.
