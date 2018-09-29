@@ -10,21 +10,21 @@ If you are looking for my code, you can find all of the open-source bits and byt
 
 More details coming soon... But here's a short preview: I recently worked on the agency software-as-a-service [HQ](https://hellohq.io) and its reimagined companion [Q.](https://meetq.ai) at [HQLabs](https://hqlabs.com/).
 
-A long time ago, in a galaxy far, far away, I studied Business Informatics at [HAW Hamburg](https://www.haw-hamburg.de/english.html) (as it turned out, I vastly preferred the computer science part over the business one...).
+A long time ago, in a galaxy far, far away, I studied Business Informatics at [HAW Hamburg](https://www.haw-hamburg.de/english.html) (but I preferred the informatics part).
 
 #### # Want to work with me?
 
 TL;DR - If you want to work with me, please be aware that I _dislike_ open-plan offices, working early in the morning, and JIRA.
 
-I'm a bit introvert so I prefer a quiet working environment with a small team. I do, however, love to pair-program from time to time! (Doing it every day would probably exhaust me, though.) I'm open to remote work, but haven't tried it yet.
+I'm a bit introverted so I prefer a quiet working environment with a small team. I do, however, love to pair-program from time to time! (Doing it every day would probably exhaust me, though.) I'm open to remote work, but haven't tried it yet.
 
 I'm a [night owl](https://en.wikipedia.org/wiki/Night_owl_%28person%29). This means I work best in the afternoon, evening, sometimes late at night, but absolutely _not_ in the morning hours. After having a good night's sleep, I usually start my work around noon.
 
 I'm pretty comfortable in both front- and backend, and I dabble in (dev) ops from time to time. I think _no code_ `>` correct code `>` simple, maintainable code `>` performant code, but I'm willing to throw exceptions for good reasons on a case by case basis.
 
-I usually document and test my code appropriately, even if it takes a little longer (hint: in most cases, _it doesn't_). And if I didn't, I probably had a bluescreen or, worse, got distracted learning something new, drifting off into the depths of the internet or the terminal for a few hours...
+I usually document and test my code appropriately, even if it takes a little longer (hint: in most cases, _it doesn't_). If I didn't, I probably got distracted learning something new, drifting off into the depths of the internet or the terminal for a few hours... and hopefully, came back as a better programmer.
 
-Being both an imperfect perfectionist and/or a minimalist, I probably enjoy refactoring and code reviews more than the average person. Plus, I hate typos.
+Being both an imperfect perfectionist and/or a minimalist, quite naturally, I enjoy refactoring and code reviews more than the average person. Plus, I hate typos.
 
 I like to share knowledge! Of all sorts, from technical tutorials for my co-workers (e.g. _[Docker step by step: A hands-on Docker tutorial](https://github.com/MarkTiedemann/docker-step-by-step)_), to programming trainings, to _"How does the internet even work?"_-workshops for everyone.
 
