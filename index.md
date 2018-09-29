@@ -2,7 +2,7 @@ I'm a software engineer that tries to be a decent, open-minded person.
 
 <span style="color: #ff5e6e;">**Welcome to my _web.site_!**</span> (It is currently under construction so don't expect too much.)
 
-_(Quick tip: If you prefer bright websites, you can click the sun in the top right corner to switch to the light theme.)_
+_(Quick tip: If you prefer <span id="brightness">bright</span> websites, you can click the <span id="icon">sun</span> in the top right corner to switch to the <span id="theme">light</span> theme.)_
 
 If you are looking for my code, you can find all of the open-source bits and bytes on [GitHub](https://github.com/MarkTiedemann).
 
