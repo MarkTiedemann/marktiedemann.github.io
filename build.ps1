@@ -21,7 +21,7 @@ function Inline($openTag, $content, $closeTag) {
 }
 
 $css = cleancss index.css
-$main = md2html index.md
+$main = marked index.md
 $prevCommit = (git log -1 --pretty=format:"%H~%cn~%ce~%cd") -split '~'
 $linkedData = Get-Content -Path linked_data.json -Raw | ConvertFrom-Json | ConvertTo-Json -Compress
 

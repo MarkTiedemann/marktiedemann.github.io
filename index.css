@@ -33,16 +33,6 @@ footer {
   padding-left: 5px;
 }
 
-/* Under construction notice */
-
-#under_construction {
-  font-weight: bold;
-  color: #ff5e6e;
-  margin: 30px auto;
-  max-width: 600px;
-  padding-left: 5px;
-}
-
 /* Mode toggle */
 
 .dark {

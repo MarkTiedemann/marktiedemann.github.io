@@ -1,12 +1,14 @@
-**Welcome to my _web.site_!**
+I'm a software engineer that tries to be a decent, open-minded person.
 
-_(Quick tip: If you prefer bright, welcoming websites, you can click the sun in the top right corner to switch to the light theme.)_
+<span style="color: #ff5e6e;">**Welcome to my _web.site_!**</span> (It is currently under construction so don't expect too much.)
+
+_(Quick tip: If you prefer bright websites, you can click the sun in the top right corner to switch to the light theme.)_
 
 If you are looking for my code, you can find all of the open-source bits and bytes on [GitHub](https://github.com/MarkTiedemann).
 
 #### # Looking for my CV?
 
-Coming soon... But here's a short preview: I recently worked on the agency software-as-a-service [HQ](https://hellohq.io) and its reimagined companion [Q.](https://meetq.ai) at [HQLabs](https://hqlabs.com/).
+More details coming soon... But here's a short preview: I recently worked on the agency software-as-a-service [HQ](https://hellohq.io) and its reimagined companion [Q.](https://meetq.ai) at [HQLabs](https://hqlabs.com/).
 
 A long time ago, in a galaxy far, far away, I studied Business Informatics at [HAW Hamburg](https://www.haw-hamburg.de/english.html) (as it turned out, I vastly preferred the computer science part over the business one...).
 
@@ -18,13 +20,13 @@ I'm a bit introvert so I prefer a quiet working environment with a small team. I
 
 I'm a [night owl](https://en.wikipedia.org/wiki/Night_owl_%28person%29). This means I work best in the afternoon, evening, sometimes late at night, but absolutely _not_ in the morning hours. After having a good night's sleep, I usually start my work around noon.
 
-#### # A bit more about me
-
 I'm pretty comfortable in both front- and backend, and I dabble in (dev) ops from time to time. I think _no code_ `>` correct code `>` simple, maintainable code `>` performant code, but I'm willing to throw exceptions for good reasons on a case by case basis.
 
-I usually document and test my code appropriately, even if it takes a little longer (hint: in most cases, _it doesn't_). And if I didn't, I probably had a bluescreen or, worse, got distracted learning something new, drifting off into the depths of the internet or the command line for a few hours...
+I usually document and test my code appropriately, even if it takes a little longer (hint: in most cases, _it doesn't_). And if I didn't, I probably had a bluescreen or, worse, got distracted learning something new, drifting off into the depths of the internet or the terminal for a few hours...
 
 Being both an imperfect perfectionist and/or a minimalist, I probably enjoy refactoring and code reviews more than the average person. Plus, I hate typos.
+
+I like to share knowledge! Of all sorts, from technical tutorials for my co-workers (e.g. _[Docker step by step: A hands-on Docker tutorial](https://github.com/MarkTiedemann/docker-step-by-step)_), to programming trainings, to _"How does the internet even work?"_-workshops for everyone.
 
 #### # Any questions? Wanna say hello?
 
@@ -32,9 +34,9 @@ I am a bit shy, but you can send me an [email](mailto:www.marktiedemann@gmail.co
 
 #### # Found a typo or, _worse_, a bug?
 
-Please let me know! The [source code](https://github.com/marktiedemann/marktiedemann.github.io) of this site is available on GitHub, too. Issues, feedback, and PRs are welcome!
+Please let me know! The [source code](https://github.com/marktiedemann/marktiedemann.github.io) of this site is available on GitHub. Issues, PRs and feeback of any kind are welcome!
 
-Hope you enjoyed the read. More content is coming soon.
+Hope you enjoyed the read.
 
 _~Mark_
 

@@ -2,7 +2,7 @@
   "devDependencies": {
     "clean-css-cli": "4.2.1",
     "js-beautify": "1.8.6",
-    "markdown": "0.5.0",
+    "marked": "0.5.1",
     "opn-cli": "3.1.0",
     "prettier": "1.14.3",
     "serve": "10.0.2",
