@@ -24,9 +24,9 @@ I'm pretty comfortable in both front- and backend, and I dabble in (dev) ops fro
 
 I usually document and test my code appropriately, even if it takes a little longer (hint: in most cases, _it doesn't_). If I didn't, I probably got distracted learning something new, drifting off into the depths of the internet or the terminal for a few hours... and hopefully, came back as a better programmer.
 
-Being both an imperfect perfectionist and/or a minimalist, quite naturally, I enjoy refactoring and code reviews more than the average person. Plus, I hate typos.
+Being both an imperfect perfectionist and/or a minimalist, I enjoy refactoring and code reviews quite a bit. Plus, I hate typos.
 
-I like to share knowledge! Of all sorts, from technical tutorials for my co-workers (e.g. _[Docker step by step: A hands-on Docker tutorial](https://github.com/MarkTiedemann/docker-step-by-step)_), to programming trainings, to _"How does the internet even work?"_-workshops for everyone.
+I also like to share knowledge! Of all sorts, from technical tutorials for my co-workers (e.g. _[Docker step by step: A hands-on Docker tutorial](https://github.com/MarkTiedemann/docker-step-by-step)_), to programming trainings, to _"How does the internet even work?"_-workshops for everyone.
 
 #### # Any questions? Wanna say hello?
 
