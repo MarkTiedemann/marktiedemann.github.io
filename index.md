@@ -34,7 +34,7 @@ I am a bit shy, but you can send me an [email](mailto:www.marktiedemann@gmail.co
 
 #### # Found a typo or, _worse_, a bug?
 
-Please let me know! The [source code](https://github.com/marktiedemann/marktiedemann.github.io) of this site is available on GitHub. Issues, PRs and feeback of any kind are welcome!
+Please let me know! The [source code](https://github.com/marktiedemann/marktiedemann.github.io) of this site is available on GitHub. Issues, PRs and feedback of any kind are welcome!
 
 Hope you enjoyed the read.
 
