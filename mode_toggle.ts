@@ -13,9 +13,10 @@ type Mode = 'dark' | 'light'
 /* The theme is selected based on the time of day. Between 06:00 and 18:00,
  * the light theme will be chosen. Otherwise, the dark theme.
  * However, once the toggle button was clicked, the selected mode will be
- * persisted in localStorage and has priority for future visits. */
+ * persisted and used for repeated visits in the current session.
+ */
 
-let mode = localStorage.getItem('mode') as Mode | null
+let mode = sessionStorage.getItem('mode') as Mode | null
 if (mode === 'dark' || mode === 'light') {
   toggleMode(mode)
 } else {
@@ -31,7 +32,7 @@ if (mode === 'dark' || mode === 'light') {
 
 $modeToggle.addEventListener('click', () => {
   mode = oppositeMode(mode)
-  localStorage.setItem('mode', mode)
+  sessionStorage.setItem('mode', mode)
   toggleMode(mode)
 })
 
