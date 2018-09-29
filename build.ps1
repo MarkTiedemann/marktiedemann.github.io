@@ -38,15 +38,10 @@ js-beautify --config .jsbeautifyrc --type html --unformatted style `
   --unformatted script --quiet --replace index.html
 Write-Host -Object "build index.html $($stopwatch.ElapsedMilliseconds)ms"
 
-# Build *.ts
+# Build index.min.js
 
 $stopwatch = [System.Diagnostics.Stopwatch]::StartNew()
 tsc --project tsconfig.json
-Write-Host -Object "build *.ts $($stopwatch.ElapsedMilliseconds)ms"
-
-# Minify *.js
-
-$stopwatch = [System.Diagnostics.Stopwatch]::StartNew()
 terser --compress --mangle --enclose --ecma 6 `
   --source-map "url='index.min.js.map'" --output index.min.js -- commit_log.js mode_toggle.js
-Write-Host -Object "minify *.js $($stopwatch.ElapsedMilliseconds)ms"
+Write-Host -Object "build index.min.js $($stopwatch.ElapsedMilliseconds)ms"

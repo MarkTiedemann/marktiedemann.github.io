@@ -1,5 +1,3 @@
-/* Global styles */
-
 body {
   font-family: 'Segoe UI', Roboto, Arial;
   -webkit-font-smoothing: antialiased;
@@ -22,7 +20,6 @@ h2 {
 }
 
 a {
-  color: #44bdff;
   text-decoration: none;
 }
 
@@ -82,15 +79,24 @@ footer {
 /* Commit log */
 
 #commit_hash {
-  color: #99efd6;
   word-wrap: break-word;
   word-break: break-all;
 }
 
-#commit_author {
+/* Colors */
+
+.lightblue {
+  color: #44bdff;
+}
+
+.darkblue {
+  color: #385cff;
+}
+
+.lightgreen {
   color: #99efd6;
 }
 
-#commit_date {
-  color: #99efd6;
+.darkgreen {
+  color: #24b347;
 }

@@ -94,7 +94,8 @@ function formatGitTimezoneOffset(offsetInMinutes: number): string {
  * Left pad the given string with a padding string to the specified length.
  */
 function leftPad(string: string, length: number, padString: string): string {
-  // TODO(future): Replace this function with ES2017 `String.prototype.padStart()`.
+  // TODO(future): Once the browser support improves, replace this function with `String.prototype.padStart()`.
+  // See: https://caniuse.com/#feat=pad-start-end
   while (string.length < length) {
     string = padString + string
   }
