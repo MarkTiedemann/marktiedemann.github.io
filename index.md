@@ -20,19 +20,23 @@ I'm a [night owl](https://en.wikipedia.org/wiki/Night_owl_%28person%29). This me
 
 I'm pretty comfortable in both front- and backend, and I dabble in (dev) ops from time to time. I think _no code_ `>` correct code `>` simple, maintainable code `>` performant code, but I'm willing to throw exceptions for good reasons on a case by case basis.
 
-I usually document and test my code appropriately, even if it takes a little longer (hint: in most cases, _it doesn't_). If I didn't, I probably got distracted learning something new, drifting off into the depths of the internet or the terminal for a few hours... and hopefully, came back as a better programmer.
+I usually document and test my code appropriately, even if it takes a little longer (hint: in most cases, _it doesn't_). Just like everyone else, I hate working with buggy and slow software, so I try not to write any such software in the first place.
 
-Being both an imperfect perfectionist and/or a minimalist, I probably enjoy refactoring and code reviews more than the average person. Plus, I hate typos.
+I easily get distracted learning something new, drifting off into the depths of the internet, the terminal, or a good book for a few hours... hopefully, coming back as a better programmer.
 
-I also like to share knowledge of all sorts! From technical tutorials for my co-workers (for example, _[Docker step by step: A hands-on Docker tutorial](https://github.com/MarkTiedemann/docker-step-by-step)_), to programming trainings, to _"How does the internet even work?"_-workshops for everyone. Hand in hand with this, I love to learn new things! If you are from Hamburg, chances are you are gonna meet me at a meetup at some point (for example, I'm quite active in the [angular.hamburg](https://angular.hamburg/) community).
+Hand in hand with this, I also like to share knowledge of all sorts! From technical tutorials for my co-workers (for example, _[Docker step by step: A hands-on Docker tutorial](https://github.com/MarkTiedemann/docker-step-by-step)_), to programming trainings, to _"How does the internet even work?"_-workshops for everyone.
 
-#### # Any questions? Wanna say hello?
+Also, if you are from Hamburg, chances are you are gonna meet me at a meetup at some point (for example, I'm quite active in the [angular.hamburg](https://angular.hamburg/) community).
 
-I am a bit shy, but you can send me an [email](mailto:www.marktiedemann@gmail.com), or just DM me on [Twitter](https://twitter.com/MarkTiedemannDE).
+At times, I'm an imperfect perfectionist and/or a minimalist so I probably enjoy refactoring and code reviews more than the average person. Plus, I hate typos.
 
 #### # Found a typo or, _worse_, a bug?
 
 Please let me know! The [source code](https://github.com/marktiedemann/marktiedemann.github.io) of this site is available on GitHub. Issues, PRs and feedback of any kind are welcome!
+
+#### # Any questions? Wanna say hello?
+
+I am a bit shy, but you can send me an [email](mailto:www.marktiedemann@gmail.com), or just DM me on [Twitter](https://twitter.com/MarkTiedemannDE).
 
 Hope you enjoyed the read.
 
