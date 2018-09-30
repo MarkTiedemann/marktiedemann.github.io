@@ -1,6 +1,6 @@
 I'm a software engineer that tries to be a decent, open-minded person.
 
-<span style="color: #ff5e6e;">**Welcome to my _web.site_!**</span> (It is currently under construction so don't expect too much.)
+<span style="color: #ff5e6e;">**Welcome to my _web.site_!**</span> It is currently under construction so don't expect too much yet.
 
 _(Quick tip: If you prefer <span id="brightness">bright</span> sites, you can click the <span id="icon">sun</span> in the top right corner to switch to the <span id="theme">light</span> theme.)_
 
@@ -14,9 +14,7 @@ A long time ago, in a galaxy far, far away, I studied Business Informatics at [H
 
 #### # Want to work with me?
 
-TL;DR - If you want to work with me, please be aware that I _dislike_ open-plan offices, working early in the morning, and JIRA.
-
-I'm a bit introverted so I prefer a quiet working environment with a small team. I do, however, love to pair-program from time to time! (Doing it every day would probably exhaust me, though.) I'm open to remote work, but haven't tried it yet.
+I'm a bit introverted. This means it's kinda hard for me to concentrate in loud, busy open-plan offices so I try to avoid them. In turn, it also means I'd be grateful for a quiet working environment with a small team. And I love to pair-program from time to time! (Doing it every day would probably exhaust me, though.) I'm open to remote work, but haven't tried it yet.
 
 I'm a [night owl](https://en.wikipedia.org/wiki/Night_owl_%28person%29). This means I work best in the afternoon, evening, sometimes late at night, but absolutely _not_ in the morning hours. After having a good night's sleep, I usually start my work around noon.
 
@@ -24,9 +22,9 @@ I'm pretty comfortable in both front- and backend, and I dabble in (dev) ops fro
 
 I usually document and test my code appropriately, even if it takes a little longer (hint: in most cases, _it doesn't_). If I didn't, I probably got distracted learning something new, drifting off into the depths of the internet or the terminal for a few hours... and hopefully, came back as a better programmer.
 
-Being both an imperfect perfectionist and/or a minimalist, I enjoy refactoring and code reviews quite a bit. Plus, I hate typos.
+Being both an imperfect perfectionist and/or a minimalist, I probably enjoy refactoring and code reviews more than the average person. Plus, I hate typos.
 
-I also like to share knowledge! Of all sorts, from technical tutorials for my co-workers (e.g. _[Docker step by step: A hands-on Docker tutorial](https://github.com/MarkTiedemann/docker-step-by-step)_), to programming trainings, to _"How does the internet even work?"_-workshops for everyone.
+I also like to share knowledge of all sorts! From technical tutorials for my co-workers (for example, _[Docker step by step: A hands-on Docker tutorial](https://github.com/MarkTiedemann/docker-step-by-step)_), to programming trainings, to _"How does the internet even work?"_-workshops for everyone. Hand in hand with this, I love to learn new things! If you are from Hamburg, chances are you are gonna meet me at a meetup at some point (for example, I'm quite active in the [angular.hamburg](https://angular.hamburg/) community).
 
 #### # Any questions? Wanna say hello?
 
