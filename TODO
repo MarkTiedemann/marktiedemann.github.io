@@ -2,7 +2,7 @@
 - Add section about the open-source projects that I maintain
 - Add section about my coding style and preferences
 - Add section about by interests (for example, video game hall-of-fame, favorite card games, comics, etc.)
-- Consider rewriting scripts with Node (for file watching) or Make / Ninja (for proper incremental rebuilds), maybe even WebPack after all
+- Consider rewriting scripts with Node (for file watching) or Make / Ninja (for proper incremental rebuilds), maybe even webpack after all
 - Add Facebook Open Graph META Tags and more Linked Data
 - Add more details to the README (explain focus of the site, give credit to used tools, etc.)
 - Consider adding minimal unit tests for the TypeScript code or simple end-to-end tests with puppeteer
