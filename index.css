@@ -43,12 +43,12 @@ footer {
 }
 
 #moon {
-  display: none;
   width: 30px;
   height: 30px;
 }
 
 #sun {
+  display: none;
   width: 30px;
   height: 30px;
 }
