@@ -22,7 +22,7 @@ I'm pretty comfortable in both front- and backend, and I dabble in (dev) ops fro
 
 I usually document and test my code appropriately, even if it takes a little longer (hint: in most cases, _it doesn't_). Just like everyone else, I hate working with buggy and slow software, so I try not to write any such software in the first place.
 
-I easily get distracted learning something new, drifting off into the depths of the internet, the terminal, or a good book for a few hours... hopefully, coming back as a better programmer.
+I enjoy learning new things. So when I do, I easily drift off into the depths of the internet, the terminal, or a book for a few hours - without noticing time fly by.
 
 Hand in hand with this, I also like to share knowledge of all sorts! From technical tutorials for my co-workers (for example, _[Docker step by step: A hands-on Docker tutorial](https://github.com/MarkTiedemann/docker-step-by-step)_), to programming trainings, to _"How does the internet even work?"_-workshops for everyone.
 
