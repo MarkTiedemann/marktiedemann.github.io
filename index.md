@@ -43,5 +43,3 @@ Hope you enjoyed the read.
 _~Mark_
 
 PS: The initial design of this site was inspired by [Sindre Sorhus'](https://github.com/sindresorhus) [website](https://sindresorhus.com/). The content and personal nature of this site are partially inspired by [Molly White's](http://www.mollywhite.net/) [manager-README](https://github.com/molly/manager-README). And the icons used on this site are by [Font Awesome](https://fontawesome.com/free), free, and [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/)-licensed.
-
-This site is hosted on [GitHub Pages](https://pages.github.com/) with DNS resolution and caching by [Cloudflare](https://www.cloudflare.com/). Since I respect your privacy, there's no tracking code. And there are no cookies, except the [\_\_cfduid cookie](https://support.cloudflare.com/hc/en-us/articles/200170156-What-does-the-CloudFlare-cfduid-cookie-do-), which cannot be turned off unfortunately (but I [plan on](https://github.com/MarkTiedemann/marktiedemann.github.io/blob/master/TODO#L1) leaving Cloudflare to get rid of it).
