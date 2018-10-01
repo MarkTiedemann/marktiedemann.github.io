@@ -14,7 +14,7 @@ A long time ago, in a galaxy far, far away, I studied Business Informatics at [H
 
 #### # Want to work with me?
 
-I'm a bit introverted. This means it's kinda hard for me to concentrate in loud, busy open-plan offices so I try to avoid them. In turn, this also means I'd be grateful for a quiet working environment with a small team. And I love to pair-program from time to time! (Doing it every day would probably exhaust me, though.) I'm open to remote work, but haven't tried it yet.
+I'm a bit introverted. This means I'm not comfortable in busy open-plan offices. In turn, this also means I'd be grateful for a quiet working environment, preferably with a small team. And I love to pair-program from time to time! (Doing it every day would probably exhaust me, though.) I'm open to remote work, but haven't tried it yet.
 
 I'm a [night owl](https://en.wikipedia.org/wiki/Night_owl_%28person%29). This means I work best in the afternoon, evening, sometimes late at night, but absolutely _not_ in the morning hours. After having a good night's sleep, I usually start my work around noon.
 
