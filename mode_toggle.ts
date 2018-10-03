@@ -4,6 +4,8 @@ let $modeToggle = document.querySelector('#mode_toggle') as HTMLButtonElement
 let $moon = document.querySelector('#moon') as SVGSVGElement
 let $sun = document.querySelector('#sun') as SVGSVGElement
 
+let $welcome = document.querySelector('#welcome') as HTMLSpanElement
+
 let $brightness = document.querySelector('#brightness') as HTMLSpanElement
 let $icon = document.querySelector('#icon') as HTMLSpanElement
 let $theme = document.querySelector('#theme') as HTMLSpanElement
@@ -52,6 +54,9 @@ function toggleMode(mode: Mode): void {
     a.classList.add(oldMode + 'blue')
     a.classList.remove(newMode + 'blue')
   })
+
+  $welcome.classList.add(oldMode + 'red')
+  $welcome.classList.remove(newMode + 'red')
 
   $commitHash.classList.add(oldMode + 'green')
   $commitHash.classList.remove(newMode + 'green')

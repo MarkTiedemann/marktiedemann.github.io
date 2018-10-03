@@ -85,6 +85,14 @@ footer {
 
 /* Colors */
 
+.lightred {
+  color: #ff5e6e;
+}
+
+.darkred {
+  color: #fc4a5b;
+}
+
 .lightblue {
   color: #44bdff;
 }
@@ -98,5 +106,5 @@ footer {
 }
 
 .darkgreen {
-  color: #24b347;
+  color: #1b8820;
 }
