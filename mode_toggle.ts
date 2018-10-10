@@ -1,16 +1,33 @@
+function classListAdd(element: Element, className: string): void {
+  element.classList.add(className)
+}
+
+function classListRemove(element: Element, className: string): void {
+  element.classList.remove(className)
+}
+
 let $body = document.body
 
-let $modeToggle = document.querySelector('#mode_toggle') as HTMLButtonElement
-let $moon = document.querySelector('#moon') as SVGSVGElement
-let $sun = document.querySelector('#sun') as SVGSVGElement
+let $modeToggle = documentGetElementById('mode_toggle') as HTMLButtonElement
+let $moon = (documentGetElementById('moon') as unknown) as SVGSVGElement
+let $sun = (documentGetElementById('sun') as unknown) as SVGSVGElement
 
-let $welcome = document.querySelector('#welcome') as HTMLSpanElement
+let $welcome = documentGetElementById('welcome') as HTMLSpanElement
 
-let $brightness = document.querySelector('#brightness') as HTMLSpanElement
-let $icon = document.querySelector('#icon') as HTMLSpanElement
-let $theme = document.querySelector('#theme') as HTMLSpanElement
+let $brightness = documentGetElementById('brightness') as HTMLSpanElement
+let $icon = documentGetElementById('icon') as HTMLSpanElement
+let $theme = documentGetElementById('theme') as HTMLSpanElement
 
 let $anchors = document.querySelectorAll('a')
+
+let _mode = 'mode'
+let _dark = 'dark' as 'dark'
+let _light = 'light' as 'light'
+let _blue = 'blue'
+let _red = 'red'
+let _green = 'green'
+let _inline = 'inline'
+let _none = 'none'
 
 type Mode = 'dark' | 'light'
 
@@ -21,23 +38,23 @@ type Mode = 'dark' | 'light'
  * persisted and used for repeated visits in the current session.
  */
 
-let mode = sessionStorage.getItem('mode') as Mode | null
-if (mode === 'dark' || mode === 'light') {
+let mode = sessionStorage.getItem(_mode) as Mode | null
+if (mode === _dark || mode === _light) {
   toggleMode(mode)
 } else {
   let hour = new Date().getHours()
   if (hour >= 6 && hour < 18) {
-    mode = 'light'
+    mode = _light
     toggleMode(mode)
   } else {
-    mode = 'dark'
+    mode = _dark
     toggleMode(mode)
   }
 }
 
 $modeToggle.addEventListener('click', () => {
   mode = oppositeMode(mode)
-  sessionStorage.setItem('mode', mode)
+  sessionStorage.setItem(_mode, mode)
   toggleMode(mode)
 })
 
@@ -47,49 +64,49 @@ function toggleMode(mode: Mode): void {
 
   // Toggle elements
 
-  $body.classList.add(newMode)
-  $body.classList.remove(oldMode)
+  classListAdd($body, newMode)
+  classListRemove($body, oldMode)
 
   $anchors.forEach(a => {
-    a.classList.add(oldMode + 'blue')
-    a.classList.remove(newMode + 'blue')
+    classListAdd(a, oldMode + _blue)
+    classListRemove(a, newMode + _blue)
   })
 
-  $welcome.classList.add(oldMode + 'red')
-  $welcome.classList.remove(newMode + 'red')
+  classListAdd($welcome, oldMode + _red)
+  classListRemove($welcome, newMode + _red)
 
-  $commitHash.classList.add(oldMode + 'green')
-  $commitHash.classList.remove(newMode + 'green')
+  classListAdd($commitHash, oldMode + _green)
+  classListRemove($commitHash, newMode + _green)
 
-  $commitAuthor.classList.add(oldMode + 'green')
-  $commitAuthor.classList.remove(newMode + 'green')
+  classListAdd($commitAuthor, oldMode + _green)
+  classListRemove($commitAuthor, newMode + _green)
 
-  $commitDate.classList.add(oldMode + 'green')
-  $commitDate.classList.remove(newMode + 'green')
+  classListAdd($commitDate, oldMode + _green)
+  classListRemove($commitDate, newMode + _green)
 
   // Toggle controls
 
-  $modeToggle.classList.add(newMode)
-  $modeToggle.classList.remove(oldMode)
+  classListAdd($modeToggle, newMode)
+  classListRemove($modeToggle, oldMode)
   $modeToggle.setAttribute('title', 'Toggle ' + oldMode + ' mode')
 
-  if (newMode === 'light') {
-    $moon.style.display = 'inline'
-    $sun.style.display = 'none'
+  if (newMode === _light) {
+    $moon.style.display = _inline
+    $sun.style.display = _none
 
-    $brightness.textContent = 'dark'
-    $icon.textContent = 'moon'
-    $theme.textContent = 'dark'
+    setTextContent($brightness, _dark)
+    setTextContent($icon, 'moon')
+    setTextContent($theme, _dark)
   } else {
-    $moon.style.display = 'none'
-    $sun.style.display = 'inline'
+    $moon.style.display = _none
+    $sun.style.display = _inline
 
-    $brightness.textContent = 'bright'
-    $icon.textContent = 'sun'
-    $theme.textContent = 'light'
+    setTextContent($brightness, 'bright')
+    setTextContent($icon, 'sun')
+    setTextContent($theme, _light)
   }
 }
 
 function oppositeMode(mode: Mode | null): Mode {
-  return mode === 'light' ? 'dark' : 'light'
+  return mode === _light ? _dark : _light
 }

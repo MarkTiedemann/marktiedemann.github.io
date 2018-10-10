@@ -7,5 +7,5 @@
 - Add Facebook Open Graph META Tags and more Linked Data
 - Add more details to the README (explain focus of the site, give credit to used tools, etc.)
 - Consider adding minimal unit tests for the TypeScript code or simple end-to-end tests with puppeteer
-- Refactor mode toggle code (use more CSS and less JavaScript to do it)
 - Check site with best-practice tools (Lighthouse, webhint, etc.)
+- Check whether site works properly in Edge and Safari

@@ -1,17 +1,38 @@
-let $commitHash = document.querySelector('#commit_hash') as HTMLSpanElement
-let $commitAuthor = document.querySelector('#commit_author') as HTMLSpanElement
-let $commitEmail = document.querySelector('#commit_email') as HTMLSpanElement
-let $commitDate = document.querySelector('#commit_date') as HTMLSpanElement
+function documentGetElementById<T extends HTMLElement>(id: string): T {
+  return document.getElementById(id) as T
+}
 
-let commitHash = localStorage.getItem('commit_hash')
-let commitAuthor = localStorage.getItem('commit_author')
-let commitEmail = localStorage.getItem('commit_email')
-let commitDate = localStorage.getItem('commit_date')
+function getItemLocalStorage(key: string): string | null {
+  return localStorage.getItem(key)
+}
 
-if (commitHash !== null) $commitHash.textContent = commitHash
-if (commitAuthor !== null) $commitAuthor.textContent = commitAuthor
-if (commitEmail !== null) $commitEmail.textContent = commitEmail
-if (commitDate !== null) $commitDate.textContent = commitDate
+function setItemLocalStorage(key: string, value: string): void {
+  localStorage.setItem(key, value)
+}
+
+function setTextContent(element: Element, text: string): void {
+  element.textContent = text
+}
+
+let _commitHash = 'commit_hash'
+let _commitAuthor = 'commit_author'
+let _commitEmail = 'commit_email'
+let _commitDate = 'commit_date'
+
+let $commitHash = documentGetElementById(_commitHash) as HTMLSpanElement
+let $commitAuthor = documentGetElementById(_commitAuthor) as HTMLSpanElement
+let $commitEmail = documentGetElementById(_commitEmail) as HTMLSpanElement
+let $commitDate = documentGetElementById(_commitDate) as HTMLSpanElement
+
+let commitHash = getItemLocalStorage(_commitHash)
+let commitAuthor = getItemLocalStorage(_commitAuthor)
+let commitEmail = getItemLocalStorage(_commitEmail)
+let commitDate = getItemLocalStorage(_commitDate)
+
+if (commitHash !== null) setTextContent($commitHash, commitHash)
+if (commitAuthor !== null) setTextContent($commitAuthor, commitAuthor)
+if (commitEmail !== null) setTextContent($commitEmail, commitEmail)
+if (commitDate !== null) setTextContent($commitDate, commitDate)
 
 requestLatestCommit()
 
@@ -50,15 +71,15 @@ function renderResponse(response: Response) {
   commitEmail = '<' + author.email + '>'
   commitDate = formatGitDate(new Date(author.date))
 
-  $commitHash.textContent = commitHash
-  $commitAuthor.textContent = commitAuthor
-  $commitEmail.textContent = commitEmail
-  $commitDate.textContent = commitDate
+  setTextContent($commitHash, commitHash)
+  setTextContent($commitAuthor, commitAuthor)
+  setTextContent($commitEmail, commitEmail)
+  setTextContent($commitDate, commitDate)
 
-  localStorage.setItem('commit_hash', commitHash)
-  localStorage.setItem('commit_author', commitAuthor)
-  localStorage.setItem('commit_email', commitEmail)
-  localStorage.setItem('commit_date', commitDate)
+  setItemLocalStorage(_commitHash, commitHash)
+  setItemLocalStorage(_commitAuthor, commitAuthor)
+  setItemLocalStorage(_commitEmail, commitEmail)
+  setItemLocalStorage(_commitDate, commitDate)
 }
 
 /**
@@ -68,9 +89,9 @@ function renderResponse(response: Response) {
 function formatGitDate(date: Date): string {
   let weekday_dayInMonth_month_year = date.toDateString()
   let weekday_dayInMonth_month = weekday_dayInMonth_month_year.replace(/ \d+$/, '')
-  let hours = leftPad(date.getHours().toString(), 2, '0')
-  let minutes = leftPad(date.getMinutes().toString(), 2, '0')
-  let seconds = leftPad(date.getSeconds().toString(), 2, '0')
+  let hours = padTwoDigits(date.getHours().toString())
+  let minutes = padTwoDigits(date.getMinutes().toString())
+  let seconds = padTwoDigits(date.getSeconds().toString())
   let time = hours + ':' + minutes + ':' + seconds
   let year = date.getFullYear()
   let offset = formatGitTimezoneOffset(date.getTimezoneOffset())
@@ -84,20 +105,12 @@ function formatGitDate(date: Date): string {
 function formatGitTimezoneOffset(offsetInMinutes: number): string {
   let offsetInHours = Math.abs(Math.floor(offsetInMinutes / 60)).toString()
   let offsetRemainder = (offsetInMinutes % 60).toString()
-  let offsetInHoursPadded = leftPad(offsetInHours, 2, '0')
-  let offsetRemainderPadded = leftPad(offsetRemainder, 2, '0')
+  let offsetInHoursPadded = padTwoDigits(offsetInHours)
+  let offsetRemainderPadded = padTwoDigits(offsetRemainder)
   let prefix = offsetInMinutes > 0 ? '-' : '+'
   return prefix + offsetInHoursPadded + offsetRemainderPadded
 }
 
-/**
- * Left pad the given string with a padding string to the specified length.
- */
-function leftPad(string: string, length: number, padString: string): string {
-  // TODO(future): Once the browser support improves, replace this function with `String.prototype.padStart()`.
-  // See: https://caniuse.com/#feat=pad-start-end
-  while (string.length < length) {
-    string = padString + string
-  }
-  return string
+function padTwoDigits(string: string): string {
+  return string.length < 2 ? '0' + string : string
 }
