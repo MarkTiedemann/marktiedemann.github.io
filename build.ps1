@@ -16,14 +16,14 @@ function Hash($text) {
   $hash
 }
 
-if (Test-Path -Path .lastwrites) {
-  $lastWrites = Get-Content -Path .lastwrites -Raw
-  $lastWritesHash = Hash $lastWrites
-  $lastWrites = $lastWrites | ConvertFrom-Json
+if (Test-Path -Path .lastbuilds) {
+  $lastBuilds = Get-Content -Path .lastbuilds -Raw
+  $lastBuildsHash = Hash $lastBuilds
+  $lastBuilds = $lastBuilds | ConvertFrom-Json
 }
 else {
-  $lastWrites = @{}
-  $lastWritesHash = $null
+  $lastBuilds = @{}
+  $lastBuildsHash = $null
 }
 
 $indexHtml = Get-Content -Path index.html -Raw
@@ -41,12 +41,12 @@ function Build($files, $command) {
   $shouldBuild = @()
   $shouldRebuild = @()
   foreach ($file in $files) {
-    $lastRecordedWrite = $lastWrites.$file
-    $actualLastWrite = (Get-Item -Path $file).LastWriteTime
-    $lastWrites | Add-Member -NotePropertyName $file -NotePropertyValue $actualLastWrite -Force
-    if ($null -ne $lastRecordedWrite) {
-      $lastRecordedWrite = Get-Date -Date $lastRecordedWrite
-      if ($lastRecordedWrite -ne $actualLastWrite) {
+    $lastBuild = $lastBuilds.$file
+    $lastWrite = (Get-Item -Path $file).LastWriteTime
+    $lastBuilds | Add-Member -NotePropertyName $file -NotePropertyValue $lastWrite -Force
+    if ($null -ne $lastBuild) {
+      $lastBuild = Get-Date -Date $lastBuild
+      if ($lastBuild -ne $lastWrite) {
         $shouldRebuild += $file
       }
     }
@@ -107,14 +107,14 @@ if ($indexHtmlHash -ne (Hash $indexHtml)) {
   Write-Host "formatted index.html"
 }
 
-$lastWrites = $lastWrites | ConvertTo-Json
-if ($null -ne $lastWritesHash) {
-  if ($lastWritesHash -ne (Hash $lastWrites)) {
-    Set-Content -Path .lastwrites -Value $lastWrites -NoNewline
-    Write-Host "rebuilt .lastwrites"
+$lastBuilds = $lastBuilds | ConvertTo-Json
+if ($null -ne $lastBuildsHash) {
+  if ($lastBuildsHash -ne (Hash $lastBuilds)) {
+    Set-Content -Path .lastbuilds -Value $lastBuilds -NoNewline
+    Write-Host "rebuilt .lastbuilds"
   }
 }
 else {
-  Set-Content -Path .lastwrites -Value $lastWrites -NoNewline
-  Write-Host "built .lastwrites"
+  Set-Content -Path .lastbuilds -Value $lastBuilds -NoNewline
+  Write-Host "built .lastbuilds"
 }
