@@ -3,7 +3,6 @@
 - Add section about by interests (for example, video game hall-of-fame, favorite card games, comics, etc.)
 - Add section about my views on Agile, Lean, Kanban, Scrum, etc.
 - Use Cloudflare for DNS only to get rid of the ___cfduid cookie; use GitHub Pages for SSL instead
-- Consider rewriting scripts with Node (for file watching) or Make / Ninja (for proper incremental rebuilds), maybe even webpack after all
 - Add Facebook Open Graph META Tags and more Linked Data
 - Add more details to the README (explain focus of the site, give credit to used tools, etc.)
 - Consider adding minimal unit tests for the TypeScript code or simple end-to-end tests with puppeteer
