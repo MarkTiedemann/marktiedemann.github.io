@@ -69,6 +69,12 @@ function Build($files, $command) {
   }
 }
 
+$commit = (git log -1 --pretty=format:'%H~%cn~%ce~%cd') -split '~'
+$indexHtml = Inline '<span id="commit_hash">' $commit[0] '</span>'
+$indexHtml = Inline '<span id="commit_author">' $commit[1] '</span>'
+$indexHtml = Inline '<span id="commit_email">' ('&lt;' + $commit[2] + '&gt;') '</span>'
+$indexHtml = Inline '<span id="commit_date">' $commit[3] '</span>'
+
 $indexHtml = Build @('index.css') {
   $css = cleancss index.css
   Inline '<style>' $css '</style>'
@@ -80,7 +86,9 @@ $indexHtml = Build @('index.md') {
 }
 
 $indexHtml = Build @('ld.json') {
-  $ld = Get-Content -Path ld.json -Raw | ConvertFrom-Json | ConvertTo-Json -Compress
+  $ld = Get-Content -Path ld.json -Raw | ConvertFrom-Json
+  $ld.subjectOf.dateModified = Get-Date -Format o
+  $ld = $ld | ConvertTo-Json -Compress
   Inline '<script type="application/ld+json">' $ld '</script>'
 }
 
@@ -92,12 +100,6 @@ $indexHtml = Build @('commit_log.js', 'mode_toggle.js') {
   $js = terser --compress --mangle --enclose --ecma 5 -- commit_log.js mode_toggle.js
   Inline '<script type="text/javascript">' $js '</script>'
 }
-
-$commit = (git log -1 --pretty=format:'%H~%cn~%ce~%cd') -split '~'
-$indexHtml = Inline '<span id="commit_hash">' $commit[0] '</span>'
-$indexHtml = Inline '<span id="commit_author">' $commit[1] '</span>'
-$indexHtml = Inline '<span id="commit_email">' ('&lt;' + $commit[2] + '&gt;') '</span>'
-$indexHtml = Inline '<span id="commit_date">' $commit[3] '</span>'
 
 if ($indexHtmlHash -ne (Hash $indexHtml)) {
   Set-Content -Path index.html -Value $indexHtml -NoNewline

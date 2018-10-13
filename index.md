@@ -8,9 +8,9 @@ If you are looking for my code, you can find all of the open-source bits and byt
 
 #### # Looking for my CV?
 
-More details coming soon... But here's a short preview: I recently worked on the agency software-as-a-service [HQ](https://hellohq.io) and its reimagined companion [Q.](https://meetq.ai) at [HQLabs](https://hqlabs.com/).
+More details coming soon... But here's a short preview: I recently worked on the agency software-as-a-service [HQ](https://hellohq.io) and its reimagined companion [Q.](https://meetq.ai) at [HQLabs](https://hqlabs.com).
 
-A long time ago, in a galaxy far, far away, I studied Business Informatics at [HAW Hamburg](https://www.haw-hamburg.de/english.html) (but I preferred the informatics part).
+A long time ago, in a galaxy far, far away, I studied Business Informatics at [HAW Hamburg](https://haw-hamburg.de) (but I preferred the informatics part).
 
 #### # Want to work with me?
 
@@ -26,7 +26,7 @@ I enjoy learning new things. So when I do, I easily drift off into the depths of
 
 Hand in hand with this, I also like to share knowledge of all sorts! From technical tutorials for my co-workers (for example, _[Docker step by step: A hands-on Docker tutorial](https://github.com/MarkTiedemann/docker-step-by-step)_), to programming trainings, to _"How does the internet even work?"_-workshops for everyone.
 
-Also, if you are from Hamburg, chances are you are gonna meet me at a meetup at some point (for example, I'm quite active in the [angular.hamburg](https://angular.hamburg/) community).
+Also, if you are from Hamburg, chances are you are gonna meet me at a meetup at some point (for example, I'm quite active in the [angular.hamburg](https://angular.hamburg) community).
 
 At times, I'm an imperfect perfectionist and/or a minimalist so I probably enjoy refactoring and code reviews more than the average person. Plus, I hate typos.
 
@@ -42,4 +42,4 @@ Hope you enjoyed the read.
 
 _~Mark_
 
-PS: The initial design of this site was inspired by [Sindre Sorhus'](https://github.com/sindresorhus) [website](https://sindresorhus.com/). The content and personal nature of this site are partially inspired by [Molly White's](http://www.mollywhite.net/) [manager-README](https://github.com/molly/manager-README). And the icons used on this site are by [Font Awesome](https://fontawesome.com/free), free, and [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/)-licensed.
+PS: The initial design of this site was inspired by [Sindre Sorhus'](https://github.com/sindresorhus) [website](https://sindresorhus.com). The content and personal nature of this site are partially inspired by [Molly White's](http://mollywhite.net) [manager-README](https://github.com/molly/manager-README). And the icons used on this site are by [Font Awesome](https://fontawesome.com/free), free, and [CC BY 4.0](https://creativecommons.org/licenses/by/4.0)-licensed.

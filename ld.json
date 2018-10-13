@@ -1,10 +1,13 @@
 {
-  "@context": "http://schema.org/",
+  "@context": "http://schema.org",
   "@type": "Person",
+  "@id": "mark",
   "name": "Mark",
   "familyName": "Tiedemann",
   "email": "www.marktiedemann@gmail.com",
+  "url": "https://marksweb.site",
   "gender": "Male",
+  "nationality": "DE",
   "homeLocation": {
     "@type": "Place",
     "address": {
@@ -13,5 +16,58 @@
       "addressRegion": "Hamburg"
     }
   },
-  "nationality": "DE"
+  "subjectOf": {
+    "@type": "WebSite",
+    "about": {
+      "@id": "mark"
+    },
+    "author": {
+      "@id": "mark"
+    },
+    "dateCreated": "2017-02-22T23:15:32+01:00",
+    "dateModified": "2017-02-22T23:15:32+01:00"
+  },
+  "alumniOf": {
+    "@type": "CollegeOrUniversity",
+    "name": "HAW Hamburg",
+    "alternateName": "Hamburg University of Applied Sciences",
+    "url": "https://haw-hamburg.de",
+    "alumni": {
+      "@id": "mark"
+    }
+  },
+  "knowsLanguage": [
+    {
+      "@type": "Language",
+      "name": "German",
+      "alternateName": "de"
+    },
+    {
+      "@type": "Language",
+      "name": "English",
+      "alternateName": "en"
+    }
+  ],
+  "knowsAbout": [
+    {
+      "@type": "ComputerLanguage",
+      "name": "JavaScript"
+    },
+    {
+      "@type": "ComputerLanguage",
+      "name": "TypeScript"
+    },
+    {
+      "@type": "ComputerLanguage",
+      "name": "Java"
+    },
+    {
+      "@type": "ComputerLanguage",
+      "name": "C#"
+    },
+    {
+      "@type": "ComputerLanguage",
+      "name": "PowerShell"
+    }
+  ]
 }
