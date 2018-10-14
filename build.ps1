@@ -85,13 +85,6 @@ $indexHtml = Build @('index.md') {
   Inline '<main>' $main '</main>'
 }
 
-$indexHtml = Build @('ld.json') {
-  $ld = Get-Content -Path ld.json -Raw | ConvertFrom-Json
-  $ld.subjectOf.dateModified = Get-Date -Format o
-  $ld = $ld | ConvertTo-Json -Compress
-  Inline '<script type="application/ld+json">' $ld '</script>'
-}
-
 Build @('commit_log.ts', 'mode_toggle.ts') {
   tsc
 } | Out-Null
