@@ -1,7 +1,7 @@
 $ErrorActionPreference = 'Stop'
-$Env:Path += ';node_modules/.bin'
+$Env:Path += ';node_modules\.bin'
 
-prettier-if-modified '*.{css,ts,md,json}' -- prettier --write | ForEach-Object {
+prettier-if-modified --ignore-path .prettierignore '**/*.{css,ts,md,json}' -- prettier --write | ForEach-Object {
   $file = $_.Split(' ')[0]
   Write-Host "formatted $file"
 }
@@ -85,12 +85,13 @@ $indexHtml = Build @('index.md') {
   Inline '<main>' $main '</main>'
 }
 
-Build @('commit_log.ts', 'mode_toggle.ts') {
+Build @('src\_shared.ts', 'src\bot_ld_inline.ts', 'src\commit_log.ts', 'src\mode_toggle.ts') {
   tsc
 } | Out-Null
 
-$indexHtml = Build @('commit_log.js', 'mode_toggle.js') {
-  $js = terser --compress --mangle --enclose --ecma 5 -- commit_log.js mode_toggle.js
+$indexHtml = Build @('src\_shared.js', 'src\bot_ld_inline.js', 'src\commit_log.js', 'src\mode_toggle.js') {
+  $js = terser --compress --mangle --enclose --ecma 5 -- `
+    src\_shared.js src\bot_ld_inline.js src\commit_log.js src\mode_toggle.js
   Inline '<script type="text/javascript">' $js '</script>'
 }
 

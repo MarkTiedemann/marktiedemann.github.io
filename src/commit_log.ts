@@ -1,19 +1,3 @@
-function documentGetElementById<T extends HTMLElement>(id: string): T {
-  return document.getElementById(id) as T
-}
-
-function getItemLocalStorage(key: string): string | null {
-  return localStorage.getItem(key)
-}
-
-function setItemLocalStorage(key: string, value: string): void {
-  localStorage.setItem(key, value)
-}
-
-function setTextContent(element: Element, text: string): void {
-  element.textContent = text
-}
-
 let _commitHash = 'commit_hash'
 let _commitAuthor = 'commit_author'
 let _commitEmail = 'commit_email'
@@ -34,20 +18,10 @@ if (commitAuthor !== null) setTextContent($commitAuthor, commitAuthor)
 if (commitEmail !== null) setTextContent($commitEmail, commitEmail)
 if (commitDate !== null) setTextContent($commitDate, commitDate)
 
-requestLatestCommit()
-
-function requestLatestCommit() {
-  let request = new XMLHttpRequest()
-  request.timeout = 1000
-  request.addEventListener('load', () => {
-    if (request.status === 200) {
-      renderResponse(JSON.parse(request.responseText))
-    }
-  })
-  let latestCommitUrl = 'https://api.github.com/repos/marktiedemann/marktiedemann.github.io/commits?page=1&per_page=1'
-  request.open('GET', latestCommitUrl)
-  request.send()
-}
+let latestCommitUrl = 'https://api.github.com/repos/marktiedemann/marktiedemann.github.io/commits?page=1&per_page=1'
+ajax(latestCommitUrl, true, text => {
+  renderResponse(JSON.parse(text))
+})
 
 interface Response {
   0: {

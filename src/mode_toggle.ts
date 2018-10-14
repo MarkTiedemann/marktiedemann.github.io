@@ -1,13 +1,3 @@
-function classListAdd(element: Element, className: string): void {
-  element.classList.add(className)
-}
-
-function classListRemove(element: Element, className: string): void {
-  element.classList.remove(className)
-}
-
-let $body = document.body
-
 let $modeToggle = documentGetElementById('mode_toggle') as HTMLButtonElement
 let $moon = (documentGetElementById('moon') as unknown) as SVGSVGElement
 let $sun = (documentGetElementById('sun') as unknown) as SVGSVGElement
