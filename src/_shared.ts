@@ -7,8 +7,7 @@ function ajax(url: string, async: boolean, callback: (text: string) => void): vo
       callback(request.responseText)
     }
   })
-  let latestCommitUrl = url
-  request.open('GET', latestCommitUrl, async)
+  request.open('GET', url, async)
   request.send()
 }
 
