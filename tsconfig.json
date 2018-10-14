@@ -3,6 +3,7 @@
   "compilerOptions": {
     "lib": ["es5", "dom"],
     "target": "es5",
+    "outDir": "build",
     "skipDefaultLibCheck": true,
     "strict": true,
     "noUnusedLocals": true,

@@ -1,5 +1,5 @@
 node_modules
 yarn.lock
-ideas.md
-*.js
+build
 .lastbuilds
+ideas.md

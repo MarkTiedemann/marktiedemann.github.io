@@ -89,9 +89,9 @@ Build @('src\_shared.ts', 'src\bot_ld_inline.ts', 'src\commit_log.ts', 'src\mode
   tsc
 } | Out-Null
 
-$indexHtml = Build @('src\_shared.js', 'src\bot_ld_inline.js', 'src\commit_log.js', 'src\mode_toggle.js') {
+$indexHtml = Build @('build\_shared.js', 'build\bot_ld_inline.js', 'build\commit_log.js', 'build\mode_toggle.js') {
   $js = terser --compress --mangle --enclose --ecma 5 -- `
-    src\_shared.js src\bot_ld_inline.js src\commit_log.js src\mode_toggle.js
+  build\_shared.js build\bot_ld_inline.js build\commit_log.js build\mode_toggle.js
   Inline '<script type="text/javascript">' $js '</script>'
 }
 
