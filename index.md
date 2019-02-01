@@ -16,7 +16,7 @@ A long time ago, in a galaxy far, far away, I studied Business Informatics at [H
 
 I'm a bit introverted. This means I'm not comfortable in busy open-plan offices. In turn, this also means I'd be grateful for a quiet working environment, preferably with a small team. And I love to pair-program from time to time! (Doing it every day would probably exhaust me, though.) I'm open to remote work, but haven't tried it yet.
 
-I'm a [night owl](https://en.wikipedia.org/wiki/Night_owl_%28person%29). This means I work best in the afternoon, evening, sometimes late at night, but absolutely _not_ in the morning hours. After having a good night's sleep, I usually start my work around noon.
+I'm a [night owl](https://en.wikipedia.org/wiki/Night_owl_%28person%29). This means I work best in the afternoon, evening, sometimes at night, but preferably not in the morning hours. After having a good night's sleep, I usually start my work close to noon.
 
 I'm pretty comfortable in both front- and backend, and I dabble in (dev) ops from time to time. I think _no code_ `>` correct code `>` simple, maintainable code `>` performant code, but I'm willing to throw exceptions for good reasons on a case by case basis.
 

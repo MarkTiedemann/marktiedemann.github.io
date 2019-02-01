@@ -1,7 +1,13 @@
+#!/usr/bin/env pwsh
 $ErrorActionPreference = 'Stop'
-$Env:Path += ';node_modules\.bin'
 
-prettier-if-modified --ignore-path .prettierignore '**/*.{css,ts,md,json}' -- prettier --write | ForEach-Object {
+if ($PSVersionTable.PSEdition -ne 'Core') { $IsWindows = $True }
+$pathSep = if ($IsWindows) { ';' } else { ':' }
+$pathJoiner = if ($IsWindows) { '\' } else { '/' }
+$env:PATH += $pathSep + ('node_modules', '.bin' -join $pathJoiner)
+
+prettier-if-modified --ignore-path .prettierignore '**/*.{css,ts,md,json}' `
+  -- prettier --write | ForEach-Object {
   $file = $_.Split(' ')[0]
   Write-Host "formatted $file"
 }
@@ -20,8 +26,7 @@ if (Test-Path -Path .lastbuilds) {
   $lastBuilds = Get-Content -Path .lastbuilds -Raw
   $lastBuildsHash = Hash $lastBuilds
   $lastBuilds = $lastBuilds | ConvertFrom-Json
-}
-else {
+} else {
   $lastBuilds = @{}
   $lastBuildsHash = $null
 }
@@ -49,8 +54,7 @@ function Build($files, $command) {
       if ($lastBuild -ne $lastWrite) {
         $shouldRebuild += $file
       }
-    }
-    else {
+    } else {
       $shouldBuild += $file
     }
   }
@@ -63,8 +67,7 @@ function Build($files, $command) {
       Write-Host "rebuilt $rebuild"
     }
     $result
-  }
-  else {
+  } else {
     $indexHtml
   }
 }
@@ -85,13 +88,18 @@ $indexHtml = Build @('index.md') {
   Inline '<main>' $main '</main>'
 }
 
-Build @('src\_shared.ts', 'src\bot_ld_inline.ts', 'src\commit_log.ts', 'src\mode_toggle.ts') {
+$srcFiles = @('_shared.ts', 'bot_ld_inline.ts', 'commit_log.ts', 'mode_toggle.ts') |
+  ForEach-Object { 'src', $_ -join $pathJoiner }
+
+Build $srcFiles {
   tsc
 } | Out-Null
 
-$indexHtml = Build @('build\_shared.js', 'build\bot_ld_inline.js', 'build\commit_log.js', 'build\mode_toggle.js') {
-  $js = terser --compress --mangle --enclose --ecma 5 -- `
-  build\_shared.js build\bot_ld_inline.js build\commit_log.js build\mode_toggle.js
+$buildFiles = @('_shared.js', 'bot_ld_inline.js', 'commit_log.js', 'mode_toggle.js') |
+  ForEach-Object { 'build', $_ -join $pathJoiner }
+
+$indexHtml = Build $buildFiles {
+  $js = terser --compress --mangle --enclose --ecma 5 -- $buildFiles
   Inline '<script type="text/javascript">' $js '</script>'
 }
 
@@ -109,8 +117,7 @@ if ($null -ne $lastBuildsHash) {
     Set-Content -Path .lastbuilds -Value $lastBuilds -NoNewline
     Write-Host "rebuilt .lastbuilds"
   }
-}
-else {
+} else {
   Set-Content -Path .lastbuilds -Value $lastBuilds -NoNewline
   Write-Host "built .lastbuilds"
 }
