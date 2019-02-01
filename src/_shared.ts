@@ -1,6 +1,10 @@
 let $body = document.body
 
-function ajax(url: string, async: boolean, callback: (text: string) => void): void {
+function ajax(
+  url: string,
+  async: boolean,
+  callback: (text: string) => void
+): void {
   let request = new XMLHttpRequest()
   request.addEventListener('load', () => {
     if (request.status === 200) {
