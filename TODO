@@ -5,6 +5,4 @@
 - Use Cloudflare for DNS only to get rid of the ___cfduid cookie; use GitHub Pages for SSL instead
 - Add Facebook Open Graph META Tags and more Linked Data
 - Add more details to the README (explain focus of the site, give credit to used tools, etc.)
-- Consider adding minimal unit tests for the TypeScript code or simple end-to-end tests with puppeteer
-- Check site with best-practice tools (Lighthouse, webhint, etc.)
 - Add E.ON to ld.json
