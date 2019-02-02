@@ -7,7 +7,7 @@ $pathJoiner = if ($IsWindows) { '\' } else { '/' }
 $env:PATH += $pathSep + ('node_modules', '.bin' -join $pathJoiner)
 
 prettier-if-modified --ignore-path .prettierignore '**/*.{css,ts,md,json}' `
-  -- prettier --write | ForEach-Object {
+  -- prettier --write | % {
   $file = $_.Split(' ')[0]
   Write-Host "formatted $file"
 }
@@ -22,8 +22,8 @@ function Hash($text) {
   $hash
 }
 
-if (Test-Path -Path .lastbuilds) {
-  $lastBuilds = Get-Content -Path .lastbuilds -Raw
+if (Test-Path .lastbuilds) {
+  $lastBuilds = Get-Content .lastbuilds -Raw
   $lastBuildsHash = Hash $lastBuilds
   $lastBuilds = $lastBuilds | ConvertFrom-Json
 } else {
@@ -31,7 +31,7 @@ if (Test-Path -Path .lastbuilds) {
   $lastBuildsHash = $null
 }
 
-$indexHtml = Get-Content -Path index.html -Raw
+$indexHtml = Get-Content index.html -Raw
 $indexHtmlHash = Hash $indexHtml
 
 function Inline($openTag, $content, $closeTag) {
@@ -47,10 +47,10 @@ function Build($files, $command) {
   $shouldRebuild = @()
   foreach ($file in $files) {
     $lastBuild = $lastBuilds.$file
-    $lastWrite = (Get-Item -Path $file).LastWriteTime
+    $lastWrite = (Get-Item $file).LastWriteTime
     $lastBuilds | Add-Member -NotePropertyName $file -NotePropertyValue $lastWrite -Force
     if ($null -ne $lastBuild) {
-      $lastBuild = Get-Date -Date $lastBuild
+      $lastBuild = Get-Date $lastBuild
       if ($lastBuild -ne $lastWrite) {
         $shouldRebuild += $file
       }
@@ -89,14 +89,14 @@ $indexHtml = Build @('index.md') {
 }
 
 $srcFiles = @('_shared.ts', 'bot_ld_inline.ts', 'commit_log.ts', 'mode_toggle.ts') |
-  ForEach-Object { 'src', $_ -join $pathJoiner }
+  % { 'src', $_ -join $pathJoiner }
 
 Build $srcFiles {
   tsc
 } | Out-Null
 
 $buildFiles = @('_shared.js', 'bot_ld_inline.js', 'commit_log.js', 'mode_toggle.js') |
-  ForEach-Object { 'build', $_ -join $pathJoiner }
+  % { 'build', $_ -join $pathJoiner }
 
 $indexHtml = Build $buildFiles {
   $js = terser --compress --mangle --enclose --ecma 5 -- $buildFiles
@@ -104,7 +104,7 @@ $indexHtml = Build $buildFiles {
 }
 
 if ($indexHtmlHash -ne (Hash $indexHtml)) {
-  Set-Content -Path index.html -Value $indexHtml -NoNewline
+  Set-Content index.html $indexHtml -NoNewline
   Write-Host "rebuilt index.html"
   js-beautify --config .jsbeautifyrc --type html --unformatted style `
     --unformatted script --quiet --replace index.html
@@ -114,10 +114,10 @@ if ($indexHtmlHash -ne (Hash $indexHtml)) {
 $lastBuilds = $lastBuilds | ConvertTo-Json
 if ($null -ne $lastBuildsHash) {
   if ($lastBuildsHash -ne (Hash $lastBuilds)) {
-    Set-Content -Path .lastbuilds -Value $lastBuilds -NoNewline
+    Set-Content .lastbuilds $lastBuilds -NoNewline
     Write-Host "rebuilt .lastbuilds"
   }
 } else {
-  Set-Content -Path .lastbuilds -Value $lastBuilds -NoNewline
+  Set-Content .lastbuilds $lastBuilds -NoNewline
   Write-Host "built .lastbuilds"
 }
