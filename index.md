@@ -1,32 +1,26 @@
 I'm a software engineer that tries to be a decent, open-minded person.
 
-<span id="welcome" class="darkred">**Welcome to my _web.site_!**</span> It is currently under construction so don't expect too much yet.
+<span id="welcome" class="darkred">**Welcome to my _web.site_!**</span>
 
-_(Quick tip: If you prefer <span id="brightness">dark</span> sites, you can click the <span id="icon">moon</span> in the top right corner to switch to the <span id="theme">dark</span> theme.)_
+If you are looking for my code, you can find all of the open-source bits and pieces on [GitHub](https://github.com/MarkTiedemann).
 
-If you are looking for my code, you can find all of the open-source bits and bytes on [GitHub](https://github.com/MarkTiedemann).
-
-#### # Looking for my CV?
-
-More details coming soon... But here's a short preview: I recently worked on the agency software-as-a-service [HQ](https://hellohq.io) and its reimagined companion [Q.](https://meetq.ai) at [HQLabs](https://hqlabs.com).
-
-A long time ago, in a galaxy far, far away, I studied Business Informatics at [HAW Hamburg](https://haw-hamburg.de) (but I preferred the informatics part).
+Recently, I joined [E.ON](https://eon.com) as a senior dev/ops engineer. Previously, I worked on the agency software-as-a-service [HQ](https://hellohq.io) and its reimagined companion [Q.](https://meetq.ai) at [HQLabs](https://hqlabs.com).
 
 #### # Want to work with me?
 
-I'm a bit introverted. This means I'm not comfortable in busy open-plan offices. In turn, this also means I'd be grateful for a quiet working environment, preferably with a small team. And I love to pair-program from time to time! (Doing it every day would probably exhaust me, though.) I'm open to remote work, but haven't tried it yet.
+I'm a bit introverted. In line with this, I prefer to work in a quiet working environment with a small team.
 
-I'm a [night owl](https://en.wikipedia.org/wiki/Night_owl_%28person%29). This means I work best in the afternoon, evening, sometimes at night, but preferably not in the morning hours. After having a good night's sleep, I usually start my work close to noon.
+Also, I'm a [night owl](https://en.wikipedia.org/wiki/Night_owl_%28person%29). This means I work best in the afternoon, evening, sometimes at night, but preferably not in the morning hours. After having a good night's sleep, I usually start my work close to noon.
 
 I'm pretty comfortable in both front- and backend, and I dabble in (dev) ops from time to time. I think _no code_ `>` correct code `>` simple, maintainable code `>` performant code, but I'm willing to throw exceptions for good reasons on a case by case basis.
 
-I usually document and test my code appropriately, even if it takes a little longer (hint: in most cases, _it doesn't_). Just like everyone else, I hate working with buggy and slow software, so I try not to write any such software in the first place.
+I usually document and test my code appropriately, even if it takes a little longer (hint: in most cases, _it doesn't_). Just like everyone else, I hate working with buggy, convoluted, or slow software, so I try not to write any such software in the first place.
 
-I enjoy learning new things. So when I do, I easily drift off into the depths of the internet, the terminal, or a book for a few hours - without noticing time fly by.
+I enjoy learning new things. So when I do, I easily drift off into the depths of the internet, the terminal, a game, or a book for a few hours - without noticing time fly by.
 
-Hand in hand with this, I also like to share knowledge of all sorts! From technical tutorials for my co-workers (for example, _[Docker step by step: A hands-on Docker tutorial](https://github.com/MarkTiedemann/docker-step-by-step)_), to programming trainings, to _"How does the internet even work?"_-workshops for everyone.
+Hand in hand with this, I also like to share knowledge of all sorts! From technical tutorials for my co-workers (for example, _[Docker Step by Step](https://github.com/MarkTiedemann/docker-step-by-step)_), to programming trainings, to _"How does the internet even work?"_-workshops for everyone.
 
-Also, if you are from Hamburg, chances are you are gonna meet me at a meetup at some point (for example, I'm quite active in the [angular.hamburg](https://angular.hamburg) community).
+Also, if you are from Hamburg, chances are you are gonna meet me at a meetup at some point (for example, I'm part of the [angular.hamburg](https://angular.hamburg) community).
 
 At times, I'm an imperfect perfectionist and/or a minimalist so I probably enjoy refactoring and code reviews more than the average person. Plus, I hate typos.
 
@@ -36,7 +30,7 @@ Please let me know! The [source code](https://github.com/marktiedemann/marktiede
 
 #### # Any questions? Wanna say hello?
 
-I am a bit shy, but you can send me an [email](mailto:www.marktiedemann@gmail.com), or just DM me on [Twitter](https://twitter.com/MarkTiedemannDE).
+Feel free to send me an [email](mailto:www.marktiedemann@gmail.com), or just DM me on [Twitter](https://twitter.com/MarkTiedemannDE).
 
 Hope you enjoyed the read.
 

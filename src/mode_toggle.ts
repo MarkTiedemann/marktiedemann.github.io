@@ -4,10 +4,6 @@ let $sun = (documentGetElementById('sun') as unknown) as SVGSVGElement
 
 let $welcome = documentGetElementById('welcome') as HTMLSpanElement
 
-let $brightness = documentGetElementById('brightness') as HTMLSpanElement
-let $icon = documentGetElementById('icon') as HTMLSpanElement
-let $theme = documentGetElementById('theme') as HTMLSpanElement
-
 let $anchors = document.querySelectorAll('a')
 
 let _mode = 'mode'
@@ -83,17 +79,9 @@ function toggleMode(mode: Mode): void {
   if (newMode === _light) {
     $moon.style.display = _inline
     $sun.style.display = _none
-
-    setTextContent($brightness, _dark)
-    setTextContent($icon, 'moon')
-    setTextContent($theme, _dark)
   } else {
     $moon.style.display = _none
     $sun.style.display = _inline
-
-    setTextContent($brightness, 'bright')
-    setTextContent($icon, 'sun')
-    setTextContent($theme, _light)
   }
 }
 
