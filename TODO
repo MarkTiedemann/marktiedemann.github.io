@@ -1,4 +1,3 @@
-- Add section about my current work
 - Add section about the open-source projects that I maintain
 - Add section about my coding style and preferences
 - Add section about by interests (for example, video game hall-of-fame, favorite card games, comics, etc.)
@@ -8,3 +7,4 @@
 - Add more details to the README (explain focus of the site, give credit to used tools, etc.)
 - Consider adding minimal unit tests for the TypeScript code or simple end-to-end tests with puppeteer
 - Check site with best-practice tools (Lighthouse, webhint, etc.)
+- Add E.ON to ld.json
