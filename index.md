@@ -4,7 +4,7 @@ I'm a software engineer that tries to be a decent, open-minded person.
 
 If you are looking for my code, you can find all of the open-source bits and pieces on [GitHub](https://github.com/MarkTiedemann).
 
-Recently, I joined [E.ON](https://eon.com) as a senior dev/ops engineer. Previously, I worked on the agency software-as-a-service [HQ](https://hellohq.io) and its reimagined companion [Q.](https://meetq.ai) at [HQLabs](https://hqlabs.com).
+Recently, I joined [E.ON](https://eon.com) as a senior dev/ops engineer. Previously, I worked on the agency software-as-a-service [HQ](https://hellohq.io) and its reimagined companion [Q.](https://meetq.ai) at HQLabs.
 
 #### # Want to work with me?
 

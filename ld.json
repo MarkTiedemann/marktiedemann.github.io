@@ -154,7 +154,7 @@
     "@type": "Organization",
     "@id": "hq-org",
     "name": "HQLabs GmbH",
-    "url": "https://hqlabs.com",
+    "url": "https://hellohq.io",
     "member": {
       "@id": "hq-role"
     }
