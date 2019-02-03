@@ -8,19 +8,15 @@ Recently, I joined [E.ON](https://eon.com) as a senior dev/ops engineer. Previou
 
 #### # Want to work with me?
 
-I'm a bit introverted. In line with this, I prefer to work in a quiet working environment with a small team.
+I'm a bit introverted. In line with this, I prefer a quiet working environment with a small team.
 
-Also, I'm a [night owl](https://en.wikipedia.org/wiki/Night_owl_%28person%29). This means I work best in the afternoon, evening, sometimes at night, but preferably not in the morning hours. After having a good night's sleep, I usually start my work close to noon.
+Also, I'm a [night owl](https://en.wikipedia.org/wiki/Night_owl_%28person%29). This means I feel most energetic and productive in the evening or at night, outside of regular business hours. After having a good night's sleep, I usually start working close to noon.
 
-I'm pretty comfortable in both front- and backend, and I dabble in (dev) ops from time to time. I think _no code_ `>` correct code `>` simple, maintainable code `>` performant code, but I'm willing to throw exceptions for good reasons on a case by case basis.
-
-I usually document and test my code appropriately, even if it takes a little longer (hint: in most cases, _it doesn't_). Just like everyone else, I hate working with buggy, convoluted, or slow software, so I try not to write any such software in the first place.
+I'm pretty comfortable in both front- and backend, and I dabble in (dev) ops from time to time. I think _no code_ `>` correct code `>` simple, maintainable code `>` performant code, but I'm willing to throw exceptions for good reasons on a case by case basis. I usually document and test my code appropriately, even if it takes a little longer (in most cases, it's well worth the effort).
 
 I enjoy learning new things. So when I do, I easily drift off into the depths of the internet, the terminal, a game, or a book for a few hours - without noticing time fly by.
 
-Hand in hand with this, I also like to share knowledge of all sorts! From technical tutorials for my co-workers (for example, _[Docker Step by Step](https://github.com/MarkTiedemann/docker-step-by-step)_), to programming trainings, to _"How does the internet even work?"_-workshops for everyone.
-
-Also, if you are from Hamburg, chances are you are gonna meet me at a meetup at some point (for example, I'm part of the [angular.hamburg](https://angular.hamburg) community).
+Hand in hand with this, I also like to share knowledge of all sorts! From technical tutorials for my co-workers (for example, _[Docker: Step by Step](https://github.com/MarkTiedemann/docker-step-by-step)_), to programming trainings, to _"How does the internet even work?"_-workshops for everyone.
 
 At times, I'm an imperfect perfectionist and/or a minimalist so I probably enjoy refactoring and code reviews more than the average person. Plus, I hate typos.
 
