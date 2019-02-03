@@ -28,8 +28,6 @@ Please let me know! The [source code](https://github.com/marktiedemann/marktiede
 
 Feel free to send me an [email](mailto:www.marktiedemann@gmail.com), or just DM me on [Twitter](https://twitter.com/MarkTiedemannDE).
 
-Hope you enjoyed the read.
-
 _~Mark_
 
 PS: The initial design of this site was inspired by [Sindre Sorhus'](https://github.com/sindresorhus) [website](https://sindresorhus.com). The content and personal nature of this site are partially inspired by [Molly White's](http://mollywhite.net) [manager-README](https://github.com/molly/manager-README). And the icons used on this site are by [Font Awesome](https://fontawesome.com/free), free, and [CC BY 4.0](https://creativecommons.org/licenses/by/4.0)-licensed.
