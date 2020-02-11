@@ -1,9 +1,0 @@
-- Add section about the open-source projects that I maintain
-- Add section about my coding style and preferences
-- Add section about by interests (for example, video game hall-of-fame, favorite card games, comics, etc.)
-- Add section about my views on Agile, Lean, Kanban, Scrum, etc.
-- Use Cloudflare for DNS only to get rid of the ___cfduid cookie; use GitHub Pages for SSL instead
-- Add more details to the README (explain focus of the site, give credit to used tools, etc.)
-- Add E.ON to ld.json
-- Use prefers-color-scheme (https://developer.mozilla.org/en-US/docs/Web/CSS/@media/prefers-color-scheme)
-  once its more widely supported (https://caniuse.com/#feat=prefers-color-scheme)
