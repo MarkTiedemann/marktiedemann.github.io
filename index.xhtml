@@ -2,41 +2,69 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en">
 	<head>
 		<title>mark's web.site</title>
-		<meta name="viewport" content="width=device-width, initial-scale=1"/>
-		<meta name="description" content="Mark's personal web.site."/>
-		<meta name="author" content="Mark Tiedemann"/>
-		<link rel="canonical" href="https://marksweb.site/"/>
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<meta name="description" content="mark's web.site" />
+		<meta name="author" content="Mark Tiedemann" />
+		<link rel="canonical" href="https://marksweb.site/index.xhtml" />
 		<style type="text/css">
-			body		{ font-family: sans-serif;
-						  color: white;
-						  background: #20202a;
-						  max-width: 65ch;
-						  margin: 2em auto;
-						  padding: 0 1em; }
-			header		{ text-align: center; }
-			header img	{ border-radius: 50%; }
-			h1			{ font-weight: lighter; }
-			a			{ text-decoration: none;
-						  color: #44bdff; }
-			footer		{ word-break: break-all; }
-			footer span	{ color: #99efd6; }
+			body {
+				background: #111;
+			}
+
+			mark {
+				color: #fff;
+				background: none;
+				font-family: serif;
+				font-size: 1.25em;
+				display: block;
+				margin: 2em auto;
+				padding: 0 1em;
+				max-width: 55ch;
+			}
+
+			aside {
+				border-left: solid .15em deeppink;
+				padding-left: .5em;
+			}
+
+			input {
+				color: #fff;
+				background: none;
+				font-family: serif;
+				font-size: 1em;
+				border: none;
+				outline: none;
+				line-height: 1.1em;
+			}
+
+			input::placeholder {
+				color: #fff;
+				opacity: 1;
+			}
+
+			a {
+				text-decoration: none;
+				color: deepskyblue;
+			}
 		</style>
 	</head>
 	<body>
-		<header>
-			<img alt="Mark" title="Mark" src="index.jpg" width="120" height="120" />
-			<h1>Hi, I'm Mark.</h1>
-		</header>
-		<main>
-			<p style="color: #f7be37; font-size: 110%;">This website is currently under construction. Please check back later.</p>
-			<h4># Any questions? Wanna say hello?</h4>
-			<p>Feel free to send me an <a href="mailto:www.marktiedemann@gmail.com">email</a>.</p>
-			<p><i>~Mark</i></p>
-		</main>
-		<footer>
-			commit <span>3a347a7f4kec0mm1th45hr3ald4t3bf09faf2db</span> (master)<br/>
-			Author: <span>Mark Tiedemann</span> &lt;www.marktiedemann@gmail.com&gt;<br/>
-			Date: <span>Sun Feb 11 23:49:12 2020 +0100</span>
-		</footer>
+		<mark>
+			<aside>This website is currently under construction. Don't expect much.</aside>
+			<br/>
+			<p>Hello <input name="name" placeholder="${visitor}," spellcheck="false"/></p>
+			<p>Welcome to my <i>web.site</i>!</p>
+			<p>I'm Mark, and I build software for fun. Currently I contribute to <a href="https://deno.land/">Deno</a> and <a href="https://play.google.com/store/apps/details?id=systems.maju.darkmode">Dark<nobr> </nobr>Mode</a>.</p>
+			<p>Most of my open-source bits and pieces can be found on <a href="https://github.com/MarkTiedemann">GitHub</a>.</p>
+			<p>If you have any questions or wanna reach out, feel free to <a href="mailto:www.marktiedemann@gmail.com">send me an email</a>.</p>
+			<p>~Mark</p>
+		</mark>
+		<script>
+			var input = document.querySelector("input");
+			input.value = sessionStorage.getItem("hello");
+			input.oninput = function() {
+				sessionStorage.setItem("hello", input.value);
+			}
+		</script>
 	</body>
 </html>
