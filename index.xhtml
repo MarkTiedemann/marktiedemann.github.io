@@ -7,10 +7,7 @@
 		<meta name="author" content="Mark Tiedemann" />
 		<link rel="canonical" href="https://marksweb.site/index.xhtml" />
 		<style type="text/css">
-			body {
-				background: #111;
-			}
-
+			body { background: #111; }
 			mark {
 				color: #fff;
 				background: none;
@@ -21,12 +18,6 @@
 				padding: 0 1em;
 				max-width: 55ch;
 			}
-
-			aside {
-				border-left: solid .15em deeppink;
-				padding-left: .5em;
-			}
-
 			input {
 				color: #fff;
 				background: none;
@@ -36,35 +27,23 @@
 				outline: none;
 				line-height: 1.1em;
 			}
-
-			input::placeholder {
-				color: #fff;
-				opacity: 1;
-			}
-
-			a {
-				text-decoration: none;
-				color: deepskyblue;
-			}
+			input::placeholder { color: #fff; opacity: 1; }
+			a { color: deepskyblue; text-decoration: none; }
+			.green { color: mediumaquamarine; }
 		</style>
 	</head>
 	<body>
 		<mark>
-			<aside>This website is currently under construction. Don't expect much.</aside>
-			<br/>
-			<p>Hello <input name="name" placeholder="${visitor}," spellcheck="false"/></p>
+			<p>Hi, I'm Mark.</p>
 			<p>Welcome to my <i>web.site</i>!</p>
-			<p>I'm Mark, and I build software for fun. Currently I contribute to <a href="https://deno.land/">Deno</a> and <a href="https://play.google.com/store/apps/details?id=systems.maju.darkmode">Dark<nobr> </nobr>Mode</a>.</p>
-			<p>Most of my open-source bits and pieces can be found on <a href="https://github.com/MarkTiedemann">GitHub</a>.</p>
-			<p>If you have any questions or wanna reach out, feel free to <a href="mailto:www.marktiedemann@gmail.com">send me an email</a>.</p>
+			<p><span class="green">#</span> About me</p>
+			<p>- I build software for fun. In particular, small tools like <a href="https://github.com/MarkTiedemann/fastlist">fastlist</a>.<br/>- Currently, I contribute to <a href="https://deno.land/">Deno</a> and <a href="https://play.google.com/store/apps/details?id=systems.maju.darkmode">Dark<nobr> </nobr>Mode</a>.<br/>- Most of my open-source code can be found on <a href="https://github.com/MarkTiedemann">GitHub</a>.<br/>- At <code>$WORK</code>, I help build a marketplace for green, regional energy.</p>
+			<p><span class="green">#</span> Contact me</p>
+			<p>Feel free to <a href="mailto:www.marktiedemann@gmail.com">send me an email</a>.</p>
 			<p>~Mark</p>
+			<p>---</p>
+			<p><span class="green">#</span> About this site</p>
+			<p>- No cookies. No scripts. Just markup &amp; styles.<br/>- All content is placed in a <code>&lt;mark&gt;</code> element.</p>
 		</mark>
-		<script>
-			var input = document.querySelector("input");
-			input.value = sessionStorage.getItem("hello");
-			input.oninput = function() {
-				sessionStorage.setItem("hello", input.value);
-			}
-		</script>
 	</body>
 </html>
