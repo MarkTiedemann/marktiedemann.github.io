@@ -5,36 +5,31 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
 		<meta name="description" content="mark's web.site" />
 		<meta name="author" content="Mark Tiedemann" />
-		<link rel="canonical" href="https://marksweb.site/index.xhtml" />
 		<style type="text/css">
-			html { background: #111; }
-			html * { max-height: 9999px; } /* Disable Chrome mobile font-boosting */
-			mark {
-				color: #fff;
-				background: #111;
-				font-family: serif;
-				font-size: 1.25em;
-				display: block;
-				margin: 2em auto;
-				padding: 0 1em;
-				max-width: 55ch;
-			}
+			body { background: #111; margin: 2rem auto; padding: 0 1rem; max-width: 80ch; }
+			body * { font-family: serif; font-size: 1.25rem; color: #fff; text-size-adjust: none; }
 			a { color: deepskyblue; text-decoration: none; }
-			.hash { color: mediumaquamarine; }
+			h1 { font-weight: normal; }
+			h1::before { content: "# "; color: mediumaquamarine; }
+			ul { padding: 0; }
+			li { list-style: none; }
+			li::before { content: "- "; }
+			address { font-style: normal; }
+			p:last-child::before { content: "~"; }
 		</style>
 	</head>
 	<body>
-		<mark>
-			<p>Hi, I'm Mark.</p>
-			<p>Welcome to my <i>web.site</i>!</p>
-			<p><span class="hash">#</span> About me</p>
-			<p>- I build software for fun. In particular, small tools like <a href="https://github.com/MarkTiedemann/fastlist">fastlist</a>.<br/>- Currently, I contribute to <a href="https://deno.land/">Deno</a> and <a href="https://play.google.com/store/apps/details?id=systems.maju.darkmode">Dark<nobr> </nobr>Mode</a>.<br/>- Most of my open-source code can be found on <a href="https://github.com/MarkTiedemann">GitHub</a>.<br/>- At <code>$WORK</code>, I help build a marketplace for green, regional energy.</p>
-			<p><span class="hash">#</span> Contact me</p>
-			<p>Feel free to <a href="mailto:www.marktiedemann@gmail.com">send me an email</a>.</p>
-			<p>~Mark</p>
-			<p>---</p>
-			<p><span class="hash">#</span> About this site</p>
-			<p>- No cookies. No scripts. Just markup &amp; styles.<br/>- All content is placed in a <code>&lt;mark&gt;</code> element.</p>
-		</mark>
+		<p>Hi, I'm Mark.</p>
+		<p>Welcome to my <i>web.site</i>!</p>
+		<h1>About me</h1>
+		<ul>
+			<li>I build software for fun. In particular, small tools like <a href="https://github.com/MarkTiedemann/fastlist">fastlist</a>.</li>
+			<li>Currently, I contribute to <a href="https://deno.land/">Deno</a> and <a href="https://play.google.com/store/apps/details?id=systems.maju.darkmode"><nobr>Dark Mode</nobr></a>.</li>
+			<li>Most of my open-source code can be found on <a href="https://github.com/MarkTiedemann">GitHub</a>.</li>
+			<li>At <code>$WORK</code>, I help build a marketplace for green, regional energy.</li>
+		</ul>
+		<h1>Contact me</h1>
+		<p>Feel free to <a href="mailto:marktiedemann@protonmail.com">send me an email</a>.</p>
+		<p>Mark</p>
 	</body>
 </html>
