@@ -1,3 +1,46 @@
 <!DOCTYPE html>
-<style>html { background: #111; }</style>
-<meta http-equiv="refresh" content="0; url=index.xhtml">
+<html lang="en">
+<meta charset="utf-8"/>
+<title>mark's web.site</title>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<meta name="description" content="mark's web.site"/>
+<meta name="author" content="Mark Tiedemann"/>
+<link rel="icon" href="data:;base64,="/>
+<style>
+
+body { background: #111; margin: 0 auto; padding: calc(2 * var(--padding)); padding-left: var(--padding); max-width: 80ch; }
+body * { font-family: serif; font-size: 1.25rem; color: #fff; text-size-adjust: none; }
+a { color: deepskyblue; text-decoration: none; }
+h1 { font-weight: normal; }
+h1::before { content: "# "; color: mediumaquamarine; }
+ul { padding-left: calc(2 * var(--padding)); }
+li { list-style-type: none; }
+li::before { content: "- "; margin-left: calc(-1 * var(--padding)); position: absolute; }
+p { padding-left: var(--padding); }
+p:last-child::before { content: "~"; }
+span { visibility: hidden; }
+
+</style>
+<span>-&nbsp;</span>
+<span>#&nbsp;</span>
+<script>
+
+let spans = [...document.querySelectorAll("span")];
+let padding = Math.max(...spans.map(span => span.getBoundingClientRect().width));
+document.body.style.setProperty("--padding", `${padding}px`);
+for (let span of spans) span.remove();
+
+</script>
+
+<p>Hi, I'm Mark.
+<p>Welcome to my <i>web.site</i>!
+<h1>About me</h1>
+<ul>
+	<li>I build software for fun. In particular, small tools like <a href="https://github.com/MarkTiedemann/fastlist">fastlist</a>.
+	<li>Most of my open-source code can be found on <a href="https://github.com/MarkTiedemann">GitHub</a>.
+	<li>I contributed to <a href="https://deno.land/">Deno</a> and <a href="https://play.google.com/store/apps/details?id=systems.maju.darkmode">Dark Mode</a>.
+	<li>At <code>$WORK</code>, I help build a marketplace for green regional energy.
+</ul>
+<h1>Contact me</h1>
+<p>Feel free to <a href="mailto:mail@marksweb.site">send me an email</a>.
+<p>Mark
