@@ -1,34 +1,68 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <meta charset="utf-8"/>
 <title>mark's web.site</title>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
 <meta name="description" content="mark's web.site"/>
 <meta name="author" content="Mark Tiedemann"/>
 <link rel="icon" href="data:;base64,="/>
+
 <style>
 
-body { background: #111; margin: 0 auto; padding: calc(2 * var(--padding)); padding-left: var(--padding); max-width: 80ch; }
-body * { font-family: serif; font-size: 1.25rem; color: #fff; text-size-adjust: none; }
-a { color: deepskyblue; text-decoration: none; }
-h1 { font-weight: normal; }
-h1::before { content: "# "; color: mediumaquamarine; }
-ul { padding-left: calc(2 * var(--padding)); }
-li { list-style-type: none; }
-li::before { content: "- "; margin-left: calc(-1 * var(--padding)); position: absolute; }
-p { padding-left: var(--padding); }
-p:last-child::before { content: "~"; }
-span { visibility: hidden; }
+body { font-family: serif; font-size: 1.25em; }
+h1::before { content: "# "; }
+h1 { font-size: 1em; }
+ul li { list-style-type: none; }
+ul li::before { content: "- "; }
+a { text-decoration: none; }
+p:last-of-type::before { content: "~"; }
+
+@media screen {
+	body { background: #111; color: #fff; margin: 0 auto; padding: calc(2 * var(--padding)); padding-left: var(--padding); max-width: 80ch; }
+	h1 { font-weight: normal; }
+	a { color: deepskyblue; }
+	h1::before { color: mediumaquamarine; }
+	ul { padding-left: calc(2 * var(--padding)); }
+	li::before {margin-left: calc(-1 * var(--padding)); position: absolute; }
+	p { padding-left: var(--padding); }
+	ol { display: none; }
+}
+
+@page {
+	margin: 0;
+	size: A4;
+}
+
+@media print {
+	:root { --page-margin: 2cm; }
+	body { counter-reset: footnotes; padding: var(--page-margin); }
+	h1::before { color: black; }
+	ul { padding-left: 0; }
+	a { color: black; }
+	a[data-mailto]::after { content: " at " attr(data-mailto); }
+	a[href^="https:"] { counter-increment: footnotes; }
+	a[href^="https:"]::after { content: "[" counter(footnotes) "]"; font-size: .6em; transform: translateY(-50%); display: inline-block; }
+	ol { padding-left: 2ch; border-top: 1px solid grey; padding-top: .85em; position: absolute; bottom: var(--page-margin); font-size: .85em; }
+	ol li::before { content: attr(data-href); }
+}
 
 </style>
+
 <span>-&nbsp;</span>
 <span>#&nbsp;</span>
+
 <script>
 
-let spans = [...document.querySelectorAll("span")];
-let padding = Math.max(...spans.map(span => span.getBoundingClientRect().width));
+let spans = document.querySelectorAll("span");
+let padding = Math.max(
+	spans[0].getBoundingClientRect().width,
+	spans[1].getBoundingClientRect().width
+);
 document.body.style.setProperty("--padding", `${padding}px`);
-for (let span of spans) span.remove();
+for (let span of spans) {
+	span.remove();
+}
 
 </script>
 
@@ -44,3 +78,20 @@ for (let span of spans) span.remove();
 <h1>Contact me</h1>
 <p>Feel free to <a href="mailto:mail@marksweb.site">send me an email</a>.
 <p>Mark
+
+<script>
+
+let ol = document.createElement("ol");
+for (let a of document.querySelectorAll("a")) {
+	let url = new URL(a.href);
+	if (url.protocol === "mailto:") {
+		a.dataset.mailto = url.pathname;
+	} else {
+		let li = document.createElement("li");
+		li.dataset.href = a.href;
+		ol.appendChild(li);
+	}
+}
+document.body.appendChild(ol);
+
+</script>
