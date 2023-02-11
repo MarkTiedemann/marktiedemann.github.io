@@ -10,16 +10,16 @@
 
 <style>
 
-body { font-family: serif; font-size: 1.25em; }
+body { font-family: serif; font-size: 1.25rem; }
 h1::before { content: "# "; }
 h1 { font-size: 1em; }
-ul li { list-style-type: none; }
+ul li { list-style-type: none; margin-bottom: 1em; }
 ul li::before { content: "- "; }
 a { text-decoration: none; }
 p:last-of-type::before { content: "~"; }
 
 @media screen {
-	body { background: #111; color: #fff; margin: 0 auto; padding: calc(2 * var(--padding)); padding-left: var(--padding); max-width: 80ch; }
+	body { background: #111; color: #fff; margin: 0 auto; padding: calc(2 * var(--padding)); padding-left: var(--padding); max-width: 60ch; }
 	h1 { font-weight: normal; }
 	a { color: deepskyblue; }
 	h1::before { color: mediumaquamarine; }
@@ -70,10 +70,18 @@ for (let span of spans) {
 <p>Welcome to my <i>web.site</i>!
 <h1>About me</h1>
 <ul>
-	<li>I build software for fun. In particular, small tools like <a href="https://github.com/MarkTiedemann/fastlist">fastlist</a>.
-	<li>Most of my open-source code can be found on <a href="https://github.com/MarkTiedemann">GitHub</a>.
-	<li>I contributed to <a href="https://deno.land/">Deno</a> and <a href="https://play.google.com/store/apps/details?id=systems.maju.darkmode">Dark Mode</a>.
-	<li>At <code>$WORK</code>, I help build a marketplace for green regional energy.
+	<li>
+		I build software for fun. Preferably, small tools, websites or apps.
+		You can find some of them on <a href="https://github.com/MarkTiedemann">GitHub</a>,
+		for example, <a href="https://github.com/MarkTiedemann/fastlist">fastlist</a>.
+		I also contributed to <a href="https://deno.land/">Deno</a> and <a href="https://play.google.com/store/apps/details?id=systems.maju.darkmode">Dark Mode</a>.
+	<li>
+		I work at <a href="https://www.eon-gridsolutions.com/">E.ON Grid Solutions</a>,
+		building an application portal for energy suppliers.
+		Previously, I helped build a marketplace for green regional energy.
+	<li>
+		At <a href="https://www.freundeskreis-fluechtlinge.com/">Freundeskreis für Flüchtlinge Ahrensburg</a>,
+		I volunteer to help refugees, among other things, as a German teacher.
 </ul>
 <h1>Contact me</h1>
 <p>Feel free to <a href="mailto:mail@marksweb.site">send me an email</a>.
