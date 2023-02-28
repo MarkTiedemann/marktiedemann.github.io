@@ -3,14 +3,14 @@
 
 <meta charset="utf-8"/>
 <title>mark's web.site</title>
-<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<meta name="viewport" content="width=device-width"/>
 <meta name="description" content="mark's web.site"/>
 <meta name="author" content="Mark Tiedemann"/>
 <link rel="icon" href="data:;base64,="/>
 
 <style>
 
-body { font-family: serif; font-size: 1.25rem; }
+body { font-family: serif; font-size: 1.25em; }
 h1::before { content: "# "; }
 h1 { font-size: 1em; }
 ul li { list-style-type: none; margin-bottom: 1em; }
@@ -24,7 +24,7 @@ p:last-of-type::before { content: "~"; }
 	a { color: deepskyblue; }
 	h1::before { color: mediumaquamarine; }
 	ul { padding-left: calc(2 * var(--padding)); }
-	li::before {margin-left: calc(-1 * var(--padding)); position: absolute; }
+	li::before { margin-left: calc(-1 * var(--padding)); position: absolute; }
 	p { padding-left: var(--padding); }
 	ol { display: none; }
 }
